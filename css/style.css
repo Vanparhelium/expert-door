@@ -113,6 +113,7 @@ body {
 }
 
 .header__top-row {
+  position: relative;
   display: flex;
   width: 100%;
   height: 100px;
@@ -122,6 +123,15 @@ body {
 .header__logo {
   width: 26px;
   height: 26px;
+  cursor: pointer;
+}
+
+.main__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
 }
 
 .header__menu {
@@ -1195,4 +1205,217 @@ body {
 
 .catalog-ofert__row .block__col-300 {
   margin-right: 70px;
+}
+
+/* --------------------card-standart.html-style---------------------------------- */
+.card__section {
+  padding: 40px 0 200px;
+
+}
+
+.card__row_line {
+  display: flex;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.card__row {
+  display: flex;
+}
+
+.card-price__old {
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: line-through;
+  color: #727272;
+}
+
+.card__price {
+  font-size: 20px;
+  line-height: 24px;
+  color: #070707;
+}
+
+.card__econom {
+  margin-top: 20px;
+  padding: 11px 45px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background: #D62D30;
+}
+
+.card__sale {
+  width: 230px;
+}
+
+.card__order {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-top: 30px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #0222A5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card__order-text {
+  font-size: 16px;
+  line-height: 21px;
+  color: #010101;
+}
+
+.card__order-text:after {
+  position: absolute;
+  content: url('../img/Arrow15.svg');
+  width: 100px;
+  background: #E5E5E5;
+  top: 35%;
+  padding: 20px 0;
+}
+
+.card__order-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.card__consultation {
+  width: 157px;
+  margin-top: 70px;
+  padding: 10px 0;
+  border-top: 1px solid #C7C7C7;
+  border-bottom: 1px solid #C7C7C7;
+}
+
+.consultation__link {
+  color: #222222;
+}
+
+.card__col {
+  margin-right: 180px;
+}
+
+.card__img {
+  width: 275px;
+  height: 540px;
+  margin-right: 20px;
+  background: url('../img/Rectangle36.jpg') center center no-repeat;
+}
+
+.card__img-preview {
+  width: 100px;
+  height: 100px;
+  background-color: #F2F2F2;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card__img-preview:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.card__img-preview_active {
+  background: inherit;
+  border: 1px solid #E6E6E6;
+}
+
+.card__img-preview-1 {
+  background: url('../img/obivka-dverej.jpg') center center no-repeat;
+}
+
+.card__img-preview-2 {
+  background-image: url('../img/dverej-.jpg');
+}
+
+.card__img-preview-3 {
+  background-image: url('../img/T52.png');
+}
+
+.card__img-preview-4 {
+  background-image: url('../img/T52-1.png');
+}
+
+.card__img-preview-5 {
+  background-image: url('../img/104_enl1.png');
+}
+
+.card__plus {
+  margin-top: 150px;
+  width: 260px;
+  margin-right: 45px;
+  padding-right: 78px;
+}
+
+.card__plus:not(:last-child) {
+  border-right: 1px solid #C7C7C7;
+}
+
+.card__plus-numb {
+  font-size: 14px;
+  line-height: 18px;
+  color: #0222A5;
+}
+
+.card__plus-tatle {
+  margin-top: 55px;
+  width: 180px;
+  font-weight: 300;
+  line-height: 23px;
+  color: #010101;
+}
+
+.card-service__section {
+  background: #F2F2F2;
+  padding-top: 50px;
+}
+
+.card-service__title {
+  font-size: 18px;
+  line-height: 23px;
+  color: #727272;
+}
+
+.card-service__row {
+  padding: 50px 0;
+}
+
+.card-service__row:not(:last-child) {
+  border-bottom: 1px solid #C7C7C7;
+}
+
+.card-service__img {
+  width: 400px;
+  height: 200px;
+}
+
+.card-service__row-title {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.card-service__row-text {
+  width: 360px;
+}
+
+.card-service__img-1 {
+  background: url('../img/Rectangle803.png') center center no-repeat;
+}
+
+.card-service__img-2 {
+  background: url('../img/1-21.png') center center no-repeat, #FEFEFE;
+}
+
+.card-service__img-3 {
+  background: url('../img/WD-40-420.png') center center no-repeat, #FEFEFE;
+}
+
+.card-options__section {
+  background: #E5E5E5;
+  padding: 250px 0 200px;
 }
