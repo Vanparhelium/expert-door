@@ -1105,6 +1105,24 @@ body {
   border: 1px solid #FEFEFE;
 }
 
+.newcomer__bullet {
+  margin-top: 57px;
+  display: flex;
+}
+
+.bullet {
+  display: block;
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #222222;
+}
+
+.bullet__active {
+  background: #222222;
+}
+
 .filter__nav {
   margin-top: 100px;
   width: 100%;
