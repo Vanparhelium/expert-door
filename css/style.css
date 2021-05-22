@@ -813,3 +813,71 @@ body {
   color: #F74646;
   background: url('../img/up.png') right center no-repeat;
 }
+
+/* -----------------------------catalog.html-style---------------------------- */
+.header__menu-link_grey {
+  color: #222222;
+}
+
+.help__btn-light {
+  background: #F2F2F2;
+}
+
+.help__link_gray {
+  color: #222222;
+}
+
+.header__nav {
+  display: flex;
+  margin-top: 115px;
+}
+
+.nav__link {
+  font-size: 14px;
+  line-height: 18px;
+  color: #9A9A9A;
+}
+
+.nav__link_active {
+  color: #222222;
+}
+
+.nav__item:not(:last-child):after {
+  content: '/';
+  color: #9A9A9A;
+  padding: 0 8px;
+}
+
+.filter__section {
+  margin-top: 20px;
+}
+
+.filter__btn {
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+  border: none;
+  background: #E6E6E6;
+}
+
+.filter__btn_active {
+  color: #FFFFFF;
+  background: #010101;
+}
+
+.filter__select {
+  width: 200px;
+  height: 40px;
+}
+
+.filter__label {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-bottom: 1 solid #E6E6E6;
+  border-top: 1px solid #000;
+}
+
