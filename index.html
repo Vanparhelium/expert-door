@@ -5,10 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Expert door</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script defer src="js/main.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -45,6 +49,7 @@
           </ul>
           <div class="help__btn">
             <a href="#" class="help__link">Помочь выбрать</a>
+            <a href="" class="help__menu">Меню</a>
           </div>
         </div>
 
@@ -71,14 +76,14 @@
       <section class="special-offer">
         <h2 class="section__name">Уникальное предложение</h2>
         <div class="section__row">
-          <div class="section__col">
+          <div class="section__col section__col_small">
             <h3 class="section__title">В стоимость двери входит</h3>
           </div>
           <div class="section__col">
             <p class="section__text">Качественные замки и ручки</p>
           </div>
         </div>
-        <ul class="section__col col__items">
+        <ul class="section__col col__items offer-col__items">
           <li class="col__item">
             <p class="section__text">Изменение цвета и рисунка фрезеровки</p>
           </li>
@@ -106,17 +111,17 @@
         </ul>
         <div class="block__row block__view">
           <div class="section__col-2">
-            <div class="block__row">
+            <div class="block__row block__row-direction">
               <div class="component">
               </div>
               <div class="special-offer__card_small">
                 <div class="special-offer__box_small">
-                  <img src="img/door355.png" alt="дверь на">
+                  <img src="img/door355.png" alt="дверь на" class="box-small__img">
                 </div>
                 <div class="sale sale_right">35 000 &#8381;</div>
               </div>
             </div>
-            <div class="block__row">
+            <div class="block__row main-btn__hidden">
               <div class="special-offer__card">
                 <div class="sale">26 800 &#8381;</div>
                 <div class="special-offer__box">
@@ -125,9 +130,9 @@
               </div>
             </div>
           </div>
-          <div class="section__col">
+          <div class="section__col special-offer__col">
             <div class="special-offer__box_big">
-              <img src="img/door44.png" alt="дверь на">
+              <img src="img/door44.png" alt="дверь на" class="box_big-img">
             </div>
             <div class="sale">44 000 &#8381;</div>
           </div>
@@ -135,7 +140,9 @@
         <div class="block__row block__row-pages">
           <div class="main-btn">
             <a href="#" class="main-btn__link">Перейти в каталог</a>
-            <div class="main-btn__arrow"><span class="main-btn__circle"></span></div>
+            <div class="main-btn__arrow main-btn-benefits__arrow">
+              <span class="main-btn__circle"></span>
+            </div>
           </div>
           <div class="pages">
             1 <span class="pages__line"></span> 2
@@ -144,27 +151,27 @@
       </section>
       <section class="benefits">
         <h2 class="section__name">Приемущества</h2>
-        <div class="block__row">
+        <div class="block__row block__row-direction">
           <div class="benefits__content">
             <h3 class="benefits__title">Expert - это достижение самых высоких целей на рынке</h3>
             <p class="benefits__text">Поэтому мы имеем в своем арсенале самые высокотехнологичные материалы. Если вам
               нужен уникальный дизайн, уникальный цвет и сложное техническое оснащение-Expert с радостью предложит для
               вас решение. </p>
           </div>
-          <div class="benefits__img"></div>
+          <div class="benefits__img benefits__img-1"></div>
         </div>
-        <div class="section__col-2">
+        <div class="section__col-2 section__col-450">
           <div class="benefits__content">
             <h3 class="benefits__title benefits__title-500">Входная дверь - это вход в ваш дом, поэтому мы серьезно
               относимся к безопасности </h3>
-            <p class="benefits__text benefits__text-500">Лучшие в отрасли функции безопасности, такие как закаленное
+            <p class="benefits__text benefits__text-500 benefits__text-500_long">Лучшие в отрасли функции безопасности, такие как закаленное
               безопасное стекло, петли и крючки. Для этого наши двери должны были пройти проверку по всем аспектам
               безопасности.</p>
           </div>
           <div class="benefits__img-500"></div>
         </div>
-        <div class="block__row">
-          <div class="block__col_right">
+        <div class="block__row block__row-direction">
+          <div class="block__col_right block__row-direction">
             <div class="benefits__content">
               <h3 class="benefits__title benefits__title-700">Входные двери Expert изготавливаются под ваши размеры, что
                 делает их более теплоэффективными</h3>
@@ -176,18 +183,19 @@
             <div class="benefits__img benefits__img-700"></div>
           </div>
         </div>
-        <div class="block__row">
+        <div class="block__row ">
           <img src="img/Expert.png" alt="Эксперт" class="expert-img">
         </div>
         <div class="block__row block__row-home">
-          <div class="block__col-300">
+          <div class="block__col-300 block__col-300_reverse">
             <div class="col-300__img"></div>
             <h4 class="block__title">Для дома</h4>
             <p class="block__text">Теплые двери с терморазрывом, созданы чтобы согревать и радовать эстетикой</p>
             <div class="main-btn main-btn-benefits">
               <a href="#" class="main-btn__link main-btn-benefits__link">Перейти в каталог</a>
-              <div class="main-btn__arrow main-btn-benefits__arrow"><span
-                  class="main-btn__circle main-btn-benefits__circle"></span></div>
+              <div class="main-btn__arrow main-btn-benefits__arrow home-btn__arrow">
+                <span class="main-btn__circle main-btn-benefits__circle"></span>
+                </div>
             </div>
           </div>
           <div class="block__col-450">
@@ -204,8 +212,8 @@
       </section>
       <section class="difference__section">
         <h2 class="section__name">Отличие Expert от китайских дверей</h2>
-        <div class="block__row section__row">
-          <h3 class="benefits__title difference__title">Сэкономить и купить дешевую дверь китайского производства или
+        <div class="block__row section__row difference__row">
+          <h3 class="benefits__title difference__title safety__title">Сэкономить и купить дешевую дверь китайского производства или
             приобрести добротную конструкцию от российского производителя.</h3>
           <div class="difference__info section__col">
             <p class="block__text difference__text">Чтобы сделать правильный выбор, нужно изучить особенности дверей
@@ -215,43 +223,103 @@
               выборе двери, какие проблемы могут возникнуть с китайской входной дверью</p>
           </div>
         </div>
-        <ul class="section__col col__items">
-          <li class="col__item">
-            <p class="section__text">Цена</p><span class="accordion__arrow"></span>
+        <ul class="section__col col__items accordion__col" id="accordion">
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Цена</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Двери китайского производства значительно дешевле по стоимости конструкциям, изготовленным в России. Но
+              так же, как и цена, качество китайских дверей значительно ниже.</p>
+              <!--  -->
           </li>
-          <li class="col__item">
-            <p class="section__text">Толщина металла и вес двери</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Толщина металла и вес двери</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Качественная металлическая дверь не может иметь легкий вес. Конструкции российского производства весьма
+              тяжелые, их вес всегда превышает 50 кг. Толщина металла – не менее 1.5 мм.
+              Двери от КНР довольно легкие и тонкие. Их вес часто не превышает 20-30 кг, а толщина металлического листа
+              едва дотягивает до 0.5 мм. При нажатии полотно прогибается и пружинится.</p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Размеры</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Размеры</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Китайские производители выпускают двери стандартных размеров. У отечественного производителя можно
+              приобрести конструкцию любых размеров для установки в дома и квартиры с разными параметрами дверного
+              проема.</p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Надежность запорных устройств</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Надежность запорных устройств</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>В конструкциях от КНР установлены дешевые замки из силумина и других ненадежных материалов. Производители
+              РФ выбирают для оснащения входной двери качественные запорные механизмы из высокопрочной латуни или стали.
+            </p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Фурнитура</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Фурнитура</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Фурнитура китайских дверей быстро приходит в негодность и теряет привлекательный вид.
+              Российские производители не экономят на столь важных элементах оснащения и комплектуют металлические двери
+              качественной фурнитурой с длительной и функциональной работоспособностью.</p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Наполнение дверей</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Наполнение дверей</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Двери отечественного производства заполняются сертифицированными материалами, прошедшими все необходимые испытательные тесты. Чаще всего используется вспененный полиуретан, базальт или минеральная плита. Эти материалы не пропускают внутрь дома холодный ветер, влагу и шум, обеспечивая надежную защиту. Китайские аналоги часто оказываются «пустотелыми» и в качестве наполнителя можно рассчитывать только на
+              гофрокартон, уложенный недостаточно плотно. Все недостатки этого материала можно заметно ощутить в
+              холодный сезон года. Дверь не защищает от сквозняков и морозов, пропускает холодный воздух в дом и
+              посторонний шум с улицы.</p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Дизайн и отделка</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Дизайн и отделка</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Двери китайского производства имеют вполне привлекательный дизайн, но если внимательно присмотреться к полотну, то можно заметить некачественно наложенный рисунок, созданный тонкой полимерной пленкой. При эксплуатации такая дверь быстро теряет привлекательные данные. К тому же, дизайн всех дверей типичен и не уникален.
+              Производители из России выбирают в качестве отделки материалы достойного качества, обладающие устойчивостью к различным воздействиям. Они создают готовому изделию презентабельный внешний вид. Покупатель может выбрать красивое полотно с декоративными элементами из хромированного металла, стекла, зеркальной поверхности или резьбой на деревянной основе. Выбор дизайнерских решений очень большой!</p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Срок эксплуатации</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Срок эксплуатации</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Китайские двери характеризуются низким качеством. Соответственно, срок эксплуатации таких конструкций небольшой. Многие называют металлические двери из КНР одноразовыми, что вполне соответствует действительности.
+              Добротные металлические двери из РФ прослужат несколько десятков лет, и даже спустя годы не потеряют своих эксплуатационных качеств. Многие граждане меняют такие двери на новые конструкции, только чтобы сменить уже поднадоевший дизайн, а старые двери, не утратившие вид и свои защитные качества, переустанавливают в другие помещения.</p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Как быстро распознать китайскую дверь</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Как быстро распознать китайскую дверь</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Двери китайского производства значительно дешевле по стоимости конструкциям, изготовленным в России. Но так же, как и цена, качество китайских дверей значительно ниже.
+            </p>
           </li>
-          <li class="col__item">
-            <p class="section__text">Вывод</p><span class="accordion__arrow"></span>
+          <li class="accordion__item">
+            <div class="accordion__item_line">
+              <p class="section__text">Вывод</p>
+              <span class="accordion__arrow"></span>
+            </div>
+            <p>Китайские двери не способы защитить дом даже от сквозняков, поэтому рассчитывать на защиту дома от взлома и проникновения воров даже не стоит. Такие двери можно установить в офисе, расположенном на отапливаемом этаже высотного здания, где работает охранная служба. Устанавливать некачественные двери в жилых домах – весьма неразумное решение.
+            <br>
+            <br>
+              Не стоит экономить деньги на покупке столь важной конструкции, основной функцией которой является защита дома. Лучше один раз потратиться, но зато приобрести высококачественную входную металлическую дверь, которая безупречно справится с поставленными задачами и прослужит ни один десяток лет. Выбрать надежную стальную дверь отечественного производителя можно на нашем сайте.</p>
           </li>
         </ul>
       </section>
       <section class="safety__section">
         <h2 class="section__name">Дополнительная безопасность</h2>
-        <div class="block__row">
-          <h3 class="benefits__title difference__title">Сэкономить и купить дешевую дверь китайского производства или
+        <div class="block__row difference__row">
+          <h3 class="benefits__title difference__title safety__title">Сэкономить и купить дешевую дверь китайского производства или
             приобрести добротную конструкцию от российского производителя.</h3>
           <div class="difference__info section__col">
             <p class="block__text safety__text">Чтобы максимально обезопасить вас, мы предлагаем надежные конструкции с
@@ -263,14 +331,14 @@
         <div class="block__row safety-block__row">
           <div class="section__col-2 safety-section__col-2">
             <h6 class="safety__section-title">Штыревой антисрез</h6>
-            <div class="main-btn-600 main-btn-safety">
-              <a href="#" class="main-btn__link main-btn-benefits__link">Узнать стоимость</a>
+            <div class="main-btn-600 main-btn-safety main-btn__hidden">
+              <a href="#" class="main-btn__link main-btn-benefits__link main-btn__link">Узнать стоимость</a>
               <div class="main-btn__arrow main-btn-benefits__arrow"><span
                   class="main-btn__circle main-btn-benefits__circle"></span>
               </div>
             </div>
           </div>
-          <div class="section__col">
+          <div class="section__col section__col_max">
             <div class="safety-block__img"></div>
             <p class="benefits__text block__text-400">Штыревой антисрез — это дополнительная система защиты двери,
               которая не позволяет вскрыть дверь со стороны петель если злоумышленник их срежет.</p>
@@ -282,10 +350,11 @@
           </div>
         </div>
         <div class="block__row safety-block__row">
-          <div class="section__col-2">
+          <div class="section__col-2 section__col_max">
+            <h6 class="safety__section-title safety__section-title_right ">Система антивор</h6>
             <div class="safety-block__img-500"></div>
           </div>
-          <div class="section__col">
+          <div class="section__col section__col_max">
             <h6 class="safety__section-title safety__section-title_left">Система антивор</h6>
             <p class="benefits__text block__text-400">Система антивор — дополнительная опция безопасности входной двери.
               Злоумышленник не сможет тихо что-то сделать с такой дверью.</p>
@@ -294,7 +363,7 @@
               Согнуть, отогнуть, тихо «подковырнуть» и т.д. — никак нельзя.</p>
             <p class="block__text block__text-420">Данная конструкция является дополнительной системой безопасности,
               которую мы можем реализовать на любой входной двери, заказанной у нас — по Вашему желанию.</p>
-            <div class="main-btn-benefits">
+            <div class="main-btn-benefits main-btn__hidden">
               <a href="#" class="main-btn__link main-btn-benefits__link">Узнать стоимость</a>
               <div class="main-btn__arrow main-btn-benefits__arrow"><span
                   class="main-btn__circle main-btn-benefits__circle"></span>
@@ -305,65 +374,73 @@
         <div class="block__row safety-block__row">
           <div class="section__col-2 safety-section__col-2">
             <h6 class="safety__section-title block__text-420">Дополнительная защита примыкания</h6>
-            <div class="main-btn-600 main-btn-safety">
+            <div class="main-btn-600 main-btn-safety main-btn__hidden">
               <a href="#" class="main-btn__link main-btn-benefits__link">Узнать стоимость</a>
               <div class="main-btn__arrow main-btn-benefits__arrow"><span
                   class="main-btn__circle main-btn-benefits__circle"></span>
               </div>
             </div>
           </div>
-          <div class="section__col">
+          <div class="section__col section__col_max">
             <div class="safety-block__img safety-block__img-bg"></div>
-            <p class="benefits__text block__text-400">Дополнительная защита примыкания — дополнительная опция безопасности входной двери.</p>
-            <p class="block__text benefits__text-500">Со стороны притвора двери наваривается «квадрат», который не позволит злоумышленнику заложить лом или фомку между луткой и дверью, чтобы отогнуть ее. На фото этот «квадрат» обозначен красным цветом. Также существуют вариации с защитой по всему периметру двери с использованием полосы. </p>
-              <p class="block__text benefits__text-500">
-              При установке двери полоса прячется под наличник, визуально не обнаруживается и не портит вид двери. Тихо подобраться к замку с такой дополнительной защитой попросту не удастся.</p>
-              <p class="block__text benefits__text-500">
-              Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой входной двери, заказанной у нас — по Вашему желанию.</p>
+            <p class="benefits__text block__text-400">Дополнительная защита примыкания — дополнительная опция
+              безопасности входной двери.</p>
+            <p class="block__text benefits__text-500">Со стороны притвора двери наваривается «квадрат», который не
+              позволит злоумышленнику заложить лом или фомку между луткой и дверью, чтобы отогнуть ее. На фото этот
+              «квадрат» обозначен красным цветом. Также существуют вариации с защитой по всему периметру двери с
+              использованием полосы. </p>
+            <p class="block__text benefits__text-500">
+              При установке двери полоса прячется под наличник, визуально не обнаруживается и не портит вид двери. Тихо
+              подобраться к замку с такой дополнительной защитой попросту не удастся.</p>
+            <p class="block__text benefits__text-500">
+              Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой
+              входной двери, заказанной у нас — по Вашему желанию.</p>
           </div>
         </div>
       </section>
       <section class="reviews__section">
         <h2 class="section__name">Отзывы о нас</h2>
-        <div class="block__row">
+        <div class="block__row block__row-direction">
           <div class="section__col-2">
             <div class="safety-block__img-500 reviews__img"></div>
           </div>
           <div class="section__col reviews__col">
-            <div class="reviews__row">
+            <div class="reviews__row block__row-reviews">
               <h3 class="benefits__title">Алексей</h3>
-              <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не ожидал.</p>
+              <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                ожидал.</p>
             </div>
             <div class="block__row">
               <div class="pages reviews-pages">
                 1 <span class="pages__line"></span> 12
               </div>
-              <div class="component"></div>
+              <div class="component reviews-component"></div>
             </div>
           </div>
         </div>
       </section>
-      <section class="callback__section">
-        <div class="section__col section__col-700">
+      <div class="callback__section">
+        <div class="section__col-700">
           <div class="callback__row">
             <div class="callback__col">
-                <p class="callback__title">Мы перезвоним вам в течение короткого времени</p>
-                <p class="block__text callback__text">Поможем выбрать дверь и ответим на любые вопросы</p>
+              <p class="callback__title">Мы перезвоним вам в течение короткого времени</p>
+              <p class="block__text callback__text">Поможем выбрать дверь и ответим на любые вопросы</p>
 
-            <div class="callback__tel">Телефон
-              <input type="tel" name="phone" id="">
+              <div class="callback__tel">Телефон
+                <input type="tel" name="phone" id="#">
+              </div>
+              <p class="personal-data">
+                Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
+                <a href="#">персональных данных</a>
+              </p>
             </div>
-            <p class="personal-data">
-              Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
-              <a href="#">персональных данных</a>
-            </p>
-          </div>
             <div class="callback__col">
               <button class="callback__btn">Отправить</button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   </main>
 
@@ -378,7 +455,7 @@
                 <a href="" class="footer__menu-link">Каталог</a>
               </li>
               <li class="footer__menu-item">
-                <a href="" class="footer__menu-link">Как выбрать  двери</a>
+                <a href="" class="footer__menu-link">Как выбрать двери</a>
               </li>
               <li class="footer__menu-item">
                 <a href="" class="footer__menu-link">Акции</a>
@@ -398,7 +475,8 @@
           </div>
         </div>
         <div class="footer__col_right">
-          <a href="tel:+7(800)666 66 66" class="bottom__link-tel">8 800 666 66 66</a>
+          <a href="tel:+78006666666" class="bottom__link-tel">8 800 666 66 66</a>
+          <a href="tel:+"></a>
           <p class="footer__text">Бесплатный звонок</p>
           <a href="#" class="social__link">Instagtam</a>
         </div>

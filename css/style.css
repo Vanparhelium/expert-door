@@ -45,6 +45,7 @@ a {
 body {
   font-family: 'SFpro', serif;
   font-style: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.02em;
@@ -76,7 +77,7 @@ body {
   bottom: 0%;
   left: 0%;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   /*background: grey;*/
 }
@@ -109,7 +110,7 @@ body {
 
 .container__header {
   position: relative;
-  height: 900px;
+  height: 100vh;
 }
 
 .header__top-row {
@@ -169,6 +170,11 @@ body {
 
 .help__link {
   color: #FEFEFE;
+}
+
+.help__menu {
+  color: #FEFEFE;
+  display: none;
 }
 
 .header__title {
@@ -249,6 +255,7 @@ body {
 .line-row__text {
   margin-top: -6px;
   padding-top: 20px;
+  white-space: nowrap;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.04em;
@@ -285,7 +292,9 @@ body {
 
 .section__name {
   margin: 0 0 50px;
+  font-weight: 400;
   font-size: 14px;
+  line-height: 18px;
   letter-spacing: 0.04em;
   color: #727272;
 }
@@ -341,9 +350,12 @@ body {
 
 .component:after {
   position: absolute;
-  top: 50px;
+  content: '';
+  top: 55px;
   right: 60px;
-  content: url('../img/Vector.svg');
+  height: 45px;
+  width: 23px;
+  background: url('../img/Vector.svg') center center no-repeat;background-size: cover;
 }
 
 .special-offer__box_small {
@@ -352,6 +364,11 @@ body {
   padding: 20px 0;
   text-align: center;
   background: #F2F2F2;
+}
+
+.box-small__img {
+  width: 128px;
+  height: 240px;
 }
 
 .block__view {
@@ -404,13 +421,10 @@ body {
 }
 
 .benefits__title {
+  font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #010101;
-}
-
-.benefits__title {
-  max-width: 400px;
 }
 
 .benefits__text {
@@ -458,10 +472,11 @@ body {
 .benefits__img-700 {
   margin-top: 40px;
   background: url('../img/Rectangle364.jpg') center center no-repeat;
+  background-size: cover;
 }
 
 .expert-img {
-  margin-top: 100px;
+  margin-top: 300px;
 }
 
 .block__row-home {
@@ -481,6 +496,7 @@ body {
 
 .block__title {
   margin: 30px 0 0;
+  font-weight: 400;
   font-size: 30px;
   line-height: 32px;
   color: #010101;
@@ -488,6 +504,7 @@ body {
 
 .block__text {
   margin: 10px 0 0;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: #222222;
@@ -559,6 +576,7 @@ body {
   height: 16px;
   background: url('../img/Arrow13.svg') center center no-repeat;
   background-size: cover;
+  transition: transform 0.3s ease-in-out;
 }
 
 .safety__section {
@@ -594,7 +612,7 @@ body {
 }
 
 .safety-block__img {
-  width: 600px;
+  width: 100%;
   height: 400px;
   margin-bottom: 20px;
   background: url('../img/Rectangle368.jpg') center center no-repeat;
@@ -602,11 +620,11 @@ body {
 }
 
 .block__text-400 {
-  width: 400px;
+  max-width: 400px;
 }
 
 .block__text-385 {
-  width: 385px;
+  max-width: 385px;
 }
 
 .block__text-more {
@@ -620,7 +638,7 @@ body {
 }
 
 .safety-block__img-500 {
-  width: 500px;
+  max-width: 500px;
   height: 600px;
   background: url('../img/unnamed4.jpg') center center no-repeat, #F2F2F2;
 }
@@ -631,8 +649,12 @@ body {
   margin: 0;
 }
 
+.safety__section-title_right {
+  display: none;
+}
+
 .block__text-420 {
-  width: 420px;
+  max-width: 420px;
 }
 
 .safety-block__img-bg {
@@ -645,6 +667,7 @@ body {
 
 .reviews__img {
   background: url('../img/Rectangle375.jpg') center center no-repeat;
+  background-size: cover;
 }
 
 .block__text-reviews {
@@ -670,6 +693,7 @@ body {
 
 .callback__title {
   width: 260px;
+  font-weight: 400;
   font-size: 18px;
   line-height: 23px;
   color: #000000;
@@ -823,6 +847,991 @@ body {
   color: #F74646;
   background: url('../img/up.png') right center no-repeat;
 }
+
+/* accordion */
+
+.accordion__item {
+  width: 100%;
+  border-bottom: 1px solid #E6E6E6;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.accordion__item:focus,
+.accordion__item:hover {
+  border-bottom: 1px solid #010101;
+}
+
+.accordion__item_line {
+  width: 100%;
+  display: flex;
+}
+
+.ui-widget {
+	font-family: 'SFpro', sans-serif;
+  font-weight: 400;
+	font-size: 16px;
+  line-height: 21px;
+  color: #010101;
+}
+
+.ui-accordion .ui-accordion-header {
+	display: flex;
+	cursor: pointer;
+	position: relative;
+	margin: 0;
+  padding: 20px 0 10px;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	border: none;
+	background: none;
+	font-weight: normal;
+	color: #010101;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	border: none;
+	background: none;
+	font-weight: normal;
+	color: #010101;
+}
+
+.ui-widget-content {
+	border: none;
+	background: none;
+	color: #010101;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: none;
+	background: none;
+	font-weight: normal;
+	color: #010101;
+}
+
+.ui-state-active .accordion__arrow {
+  transform: rotateZ(180deg);
+}
+
+.ui-accordion .ui-accordion-content {
+  max-width: 390px;
+  padding: 10px 0;
+	border: none;
+	overflow: auto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+}
+
+.ui-icon {
+  width: 0;
+  height: 0;
+}
+
+.ui-state-focus:focus {
+  color: #010101;
+}
+
+/* -----------------------------adptive-index.html----------------------------- */
+@media (max-width: 1599px) {
+  .header__title {
+    margin-top: 120px;
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .header__line {
+    top: 480px;
+  }
+
+  .benefits__text {
+    margin-right: 20px;
+  }
+
+  .section__col {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .video-container video.fillWidth {
+    width: auto;
+  }
+
+  .header__menu-item {
+    margin-right: 30px;
+  }
+
+  .help__btn {
+    width: 160px;
+    height: 160px;
+    padding: 19px;
+  }
+
+  .header__title {
+    font-size: 84px;
+    line-height: 84px;
+  }
+
+  .consultation {
+    margin-top: 30px;
+  }
+
+  .main-btn__arrow {
+    width: 280px;
+  }
+
+  .header__line {
+    top: 70vh;
+  }
+
+  .component {
+    width: 130px;
+    height: 130px;
+  }
+
+  .section__col-2 {
+    width: 400px;
+  }
+
+  .component:after {
+    top: 40px;
+    right: 48px;
+  }
+
+  .special-offer__box_small {
+    width: 150px;
+    padding: 40px 0;
+  }
+
+  .box-small__img {
+    width: 96px;
+    height: 200px;
+  }
+
+  .benefits__img {
+    width: 450px;
+  }
+
+  .benefits__img-1 {
+    background: url('../img/Rectangle359.jpg') center center no-repeat;
+  }
+
+  .benefits__text {
+    max-width: 400px;
+  }
+
+  .section__co-450,
+  .benefits__img-500 {
+    width: 450px;
+  }
+
+  .benefits__img-500 {
+    margin-top: 100px;
+  }
+
+  .benefits__text-500_long {
+    position: absolute;
+    max-width: 485px;
+  }
+
+  .col-600__img,
+  .block__col-450 {
+    width: 450px;
+  }
+
+  .benefits__title {
+    max-width: 400px;
+  }
+
+  .footer__logo {
+    margin-right: 37px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .footer__menu-item {
+    margin-right: 16px;
+  }
+
+  .footer__bottom-link:first-child {
+    margin-right: 42px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 34px;
+  }
+
+  .header__menu-items {
+    display: none;
+  }
+
+  .help__btn {
+    margin-left: auto;
+    justify-content: center;
+  }
+
+  .help__link {
+    display: none;
+  }
+
+  .help__menu {
+    display: block;
+  }
+
+  .header__title {
+    font-size: 66px;
+    line-height: 66px;
+  }
+
+  .component {
+    width: 100px;
+    height: 100px;
+  }
+
+  .component:after {
+    content: '';
+    height: 40px;
+    width: 20px;
+    top: 30px;
+    right: 35px;
+  }
+
+  .section__col-2 {
+    width: 320px;
+  }
+
+  .box_big-img {
+    width: 200px;
+    height: 390px;
+  }
+
+  .benefits__img-500 {
+    width: 350px;
+    margin-top: 40px;
+  }
+
+  .col-600__img,
+  .block__col-450,
+  .section__col-450 {
+    width: 350px;
+  }
+
+  .benefits__text-500_long {
+    position: relative;
+    margin-right: 0;
+  }
+
+  .col-300__img,
+  .block__col-300 {
+    width: 250px;
+  }
+
+  .main-btn-benefits__arrow {
+    width: 188px;
+  }
+
+  .benefits__title {
+    width: 320px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .footer {
+    padding: 55px 0 35px;
+  }
+
+  .footer__row-top,
+  .footer__menu {
+    flex-direction: column;
+  }
+
+  .footer__menu {
+    margin-top: 14px;
+  }
+
+  .footer__menu-item {
+    margin-top: 16px;
+  }
+
+  .footer__row-bottom {
+    margin-top: 30px;
+    flex-direction: column;
+  }
+
+  .footer__bottom-link {
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
+
+  .footer__bottom-link:first-child {
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 32px;
+    order: 2;
+  }
+
+  .social__link {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 779px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .header__top-row {
+    height: 80px;
+  }
+
+  .header__logo {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header__menu {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .help__btn {
+    width: 118px;
+    height: 118px;
+  }
+
+  .header__title {
+    margin-top: 60px;
+    font-size: 41px;
+    line-height: 41px;
+  }
+
+  .main-btn__link {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .main-btn__arrow {
+    width: 200px;
+  }
+
+  .header__line {
+    border: none;
+    top: 85vh;
+  }
+
+  .header__line-row {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .line-row__text {
+    position: relative;
+    padding-top: 0;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 15px;
+    margin-right: 40px;
+    background: none;
+  }
+
+  .line-row__text:after {
+    position: absolute;
+    content: '';
+    top: -2px;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background: #222222;
+  }
+
+  .line-row__text:nth-child(2),
+  .line-row__text:nth-child(3),
+  .line-row__text:nth-child(4) {
+    padding-top: 0;
+  }
+
+  .line-row__text:nth-child(odd) {
+    margin-right: 40px;
+  }
+
+  .special-offer {
+    margin-top: 145px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .section__title {
+    width: 175px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .col__item {
+    padding: 10px 0;
+  }
+
+  .offer-col__items {
+    width: 55%;
+  }
+
+  .section__col_small {
+    width: 45%;
+  }
+
+  .component {
+    width: 70px;
+    height: 70px;
+  }
+
+  .component:after {
+    top: 23px;
+    right: 27px;
+    width: 11px;
+    height: 21px;
+  }
+
+  .section__col-2 {
+    width: 220px;
+  }
+
+  .special-offer__box_small {
+    width: 110px;
+    height: 218px;
+  }
+
+  .box-small__img {
+    width: 76px;
+    height: 138px;
+  }
+
+  .special-offer__col {
+    width: 200px;
+  }
+
+  .special-offer__box_big {
+    height: 100%;
+    margin-left: auto;
+    padding: 132px 0;
+  }
+
+  .box_big-img {
+    width: 116px;
+    height: 226px;
+  }
+
+  .block__row-pages {
+    margin-top: 55px;
+  }
+
+  .pages__line {
+    width: 57px;
+  }
+
+  .difference__section {
+    margin-top: 200px;
+  }
+
+  .benefits {
+    margin-top: 200px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .section__name {
+    margin-bottom: 40px;
+  }
+
+  .benefits__content {
+    max-width: 220px;
+    margin-right: 20px;
+  }
+
+  .benefits__title {
+    max-width: 220px;
+  }
+
+  .benefits__img {
+    height: 300px;
+    margin-bottom: 150px;
+  }
+
+  .benefits__img-500 {
+    width: 440px;
+    height: 300px;
+    margin-bottom: 150px;
+  }
+
+  .benefits__img-700 {
+    width: 200px;
+    height: 350px;
+    margin: 0;
+  }
+
+  .block__col_right {
+    display: flex;
+  }
+
+  .expert-img {
+    margin-top: 200px;
+  }
+
+  .col-300__img,
+  .block__col-300 {
+    width: 190px;
+  }
+
+  .col-300__img {
+    height: 480px;
+  }
+
+  .block__col-450,
+  .section__col-450 {
+    width: 200px;
+  }
+
+  .col-600__img {
+    width: 200px;
+    height: 319px;
+  }
+
+  .block__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .block__text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .main-btn-benefits__arrow {
+    width: 188px;
+  }
+
+  .main-btn-benefits__arrow:after {
+    top: -8px;
+  }
+
+  .home-btn__arrow {
+    width: 178px;
+  }
+
+  .difference__row {
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+  }
+
+  .difference__title {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .difference__info {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .accordion__col {
+    width: 100%;
+  }
+
+  .safety__title {
+    width: 320px;
+  }
+
+  .safety-block__row {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  .safety-section__col-2 {
+    width: 100%;
+  }
+
+  .safety__section-title {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .main-btn__hidden {
+    display: none;
+  }
+
+  .section__col_max {
+    width: 100%;
+  }
+
+  .block__text-420 {
+    max-width: 100%;
+  }
+
+  .safety__section-title_right {
+    display: block;
+  }
+
+  .safety__section-title_left {
+    display: none;
+  }
+
+  .reviews__section {
+    margin-top: 200px;
+  }
+
+  .reviews__img {
+    height: 359px;
+  }
+
+  .reviews__col {
+    width: 200px;
+  }
+
+  .callback__section {
+    margin-top: 150px;
+    justify-content: start;
+  }
+
+  .section__col-700 {
+    width: 100%;
+  }
+
+  .callback__title {
+    max-width: 220px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .callback__text {
+    max-width: 220px;
+  }
+
+  .callback__tel {
+    max-width: 220px;
+    margin-top: 30px;
+  }
+
+  .personal-data {
+    max-width: 220px;
+  }
+
+  .callback__btn {
+    width: 130px;
+    height: 130px;
+  }
+
+  .callback__row {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .header {
+    height: 560px;
+  }
+
+  .header__title {
+    margin-top: 60px;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .header__line {
+    position: relative;
+    margin-top: 30px;
+    top: 0;
+  }
+
+  .line-row__text {
+    color: #010101;
+    margin-bottom: 30px;
+  }
+
+  .line-row__text:after {
+    top: -4px;
+  }
+
+  .special-offer {
+    margin-top: 35px;
+  }
+
+  .section__row {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section__col {
+    width: 100%;
+  }
+
+  .section__col_small {
+    margin-bottom: 20px;
+  }
+
+  .block__view {
+    margin-top: 50px;
+  }
+
+  .block__row-direction {
+    flex-direction: column;
+  }
+
+  .special-offer__card_small {
+    margin-top: 43px;
+  }
+
+  .section__col-2 {
+    width: 150px;
+  }
+
+  .special-offer__box_small {
+    width: 150px;
+  }
+
+  .special-offer__col {
+    width: 140px;
+  }
+
+  .special-offer__box_big {
+    height: 330px;
+    padding-top: 90px;
+    padding-bottom: 84px;
+  }
+
+  .box_big-img {
+    width: 80px;
+    height: 155px;
+  }
+
+  .sale {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .sale_right {
+    text-align: left;
+  }
+
+  .block__row-pages {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .pages {
+    margin-left: auto;
+    margin-bottom: 50px;
+  }
+
+  .pages__line {
+    width: 80px;
+    margin: 5px 18px;
+  }
+
+  .main-btn {
+    margin-right: auto;
+  }
+
+  .benefits {
+    margin-top: 150px;
+  }
+
+  .benefits__title {
+    max-width: 100%;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .benefits__title-700 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .benefits__content {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .benefits__text {
+    margin-right: 0;
+  }
+
+  .benefits__img-1 {
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 130px;
+    background-size: cover;
+  }
+
+  .section__col-2 {
+    width: 100%;
+  }
+
+  .benefits__img-500 {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 130px;
+  }
+
+  .benefits__img-700 {
+    margin-top: 30px;
+    width: 300px;
+    height: 200px;
+  }
+
+  .expert-img {
+    margin-top: 130px;
+  }
+
+  .block__row-home {
+    margin-top: 50px;
+    flex-direction: column-reverse;
+  }
+
+  .col-600__img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 70px;
+  }
+
+  .block__col-300_reverse {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-300__img {
+    order: 4;
+    margin-top: 50px;
+    width: 300px;
+    height: 200px;
+    background: url('../img/Rectangle45.jpg') center center no-repeat;
+  }
+
+  .safety__section-title {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .safety-block__row {
+    margin-top: 50px;
+  }
+
+  .safety-block__img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .safety-block__img-500,
+  .safety-block__img-bg {
+    width: 300px;
+    height: 252px;
+    background-size: contain;
+  }
+
+  .reviews__img {
+    width: 150px;
+    height: 250px;
+    background-size: cover;
+  }
+
+  .reviews__section {
+    margin-top: 130px;
+  }
+
+  .block__row-reviews {
+    order: 2;
+  }
+
+  .reviews-pages {
+    margin-top: 11px;
+    margin-left: 0;
+  }
+
+  .reviews-component {
+    margin-top: -70px;
+  }
+
+  .callback__tel {
+    width: 159px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .callback__tel input {
+    width: 100px;
+  }
+
+  .personal-data {
+    width: 159px;
+  }
+
+  .callback__btn {
+    margin-left: -50px;
+    width: 90px;
+    height: 90px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .main {
+    padding-bottom: 100px;
+  }
+
+  /* ржака */
+  .footer__logo {
+    margin-bottom: 50px;
+  }
+
+  .footer__col_right {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .bottom__link-tel {
+    width: 200px;
+    margin-left: -224px;
+  }
+
+  .footer__text {
+    width: 200px;
+    margin-left: -224px;
+    margin-top: 4px;
+  }
+}
+
+
+
 
 /* -----------------------------catalog.html-style---------------------------- */
 .header__menu-link_grey {
@@ -1654,3 +2663,4 @@ body {
 .sentens__nav-link {
   position: absolute;
 }
+
