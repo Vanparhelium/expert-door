@@ -1419,3 +1419,72 @@ body {
   background: #E5E5E5;
   padding: 250px 0 200px;
 }
+
+.options__item {
+  height: 60px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: #010101;
+  border-bottom: 1px solid #010101;
+  border-right: 1px solid #010101;
+}
+
+.options__item_active {
+  background: #010101;
+  color: #FEFEFE;
+}
+
+.card__option {
+  margin-top: 50px;
+}
+
+.card-option__item {
+  font-size: 14px;
+  line-height: 18px;
+  white-space: nowrap;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 0 20px 10px;
+  color: #727272;
+}
+
+.card-option__item:last-child {
+  padding: 0 0 0 15px;
+}
+
+.card-option__item:first-child {
+  padding: 0 15px 0 0;
+}
+
+.card-option__item_active {
+  color: #010101;
+  border-bottom: 1px solid #010101;
+}
+
+.options__table {
+  display: none;
+  margin-top: 30px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.options__table_hidden {
+  display: table;
+}
+
+.options__table td {
+  width: 100%;
+  padding: 7px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 18px;
+  color: #212121;
+}
+
+.options__table tr:nth-child(odd) {
+  background: #E6E6E6;
+}
