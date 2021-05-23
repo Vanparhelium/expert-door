@@ -1416,7 +1416,7 @@ body {
 }
 
 .card-options__section {
-  background: #F2F2F2;
+  background: #E5E5E5;
   padding: 250px 0 200px;
 }
 
@@ -1487,6 +1487,11 @@ body {
 
 .options__table tr:nth-child(odd) {
   background: #E6E6E6;
+}
+
+.add-options__section {
+  background: #F2F2F2;
+  padding: 50px 0;
 }
 
 .work__section {
