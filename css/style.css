@@ -1366,6 +1366,7 @@ body {
   margin-top: 55px;
   width: 180px;
   font-weight: 300;
+  font-size: 18px;
   line-height: 23px;
   color: #010101;
 }
@@ -1492,9 +1493,164 @@ body {
 .add-options__section {
   background: #F2F2F2;
   padding: 50px 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.add-options__card {
+  margin-top: 50px;
+}
+
+.add-options__card-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+}
+
+.add-options__card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: url('../img/arrow5.png') center center no-repeat, #0222A5;
+}
+
+.add-options__card-img-1 {
+  background: url('../img/53.jpg') center center no-repeat;
+}
+
+.add-options__card-img-2 {
+  background: url('../img/53-1.jpg') center center no-repeat;
+}
+
+.add-options__card-img-3 {
+  background: url('../img/53-2.jpg') center center no-repeat;
+}
+
+.add-options__card-img-4 {
+  background: url('../img/53-3.jpg') center center no-repeat;
+}
+
+.add-options__card-img-5 {
+  background: url('../img/53-4.jpg') center center no-repeat;
+}
+
+.add-options__title {
+  margin-top: 150px;;
+}
+
+.add-options__col {
+  margin-top: 22px;
+  width: 560px;
+}
+
+.add-options__link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .work__section {
   background: #E5E5E5;
   padding: 250px 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.card__work {
+  width: 303px;
+  padding-right: 30px;
+  margin-right: 73px;
+}
+
+.card__work-text {
+  margin-top: 10px;
+  color: #222222;
+}
+
+.visualization__section {
+  background: #010101;
+  padding: 65px 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.visualization__title {
+  margin-top: 115px;
+  color: #F2F2F2;
+}
+
+.visualization__text {
+  width: 320px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #C7C7C7;
+}
+
+.visualizationr-btn__arrow:after {
+  top: -10px;
+}
+
+.visualization-img {
+  width: 590px;
+  height: 470px;
+}
+
+.payment__section {
+  padding: 250px 0 200px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.card__payment {
+  width: 440px;
+  margin-top: 50px;
+  padding-right: 10px;
+}
+
+.card__payment-text {
+  margin-top: 55px;
+}
+
+.sentence__conteiner {
+  margin-top: 270px;
+}
+
+.sentens__row {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.sentens__nav {
+  margin-top: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sentens__nav-item {
+  position: relative;
+  display: flex;
+}
+
+.sentens__nav_left {
+  width: 100px;
+  height: 22px;
+  background: url('../img/Arrow15.svg') center center no-repeat;
+  transform: scaleX(-1);
+}
+
+.sentens__nav_right {
+  width: 100px;
+  height: 22px;
+  background: url('../img/Arrow15.svg') center center no-repeat;
+}
+
+.sentens__nav-link {
+  position: absolute;
 }
