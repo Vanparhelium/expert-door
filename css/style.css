@@ -947,6 +947,10 @@ a.ui-button:active,
   color: #010101;
 }
 
+.section__col-main {
+  width: 50%;
+}
+
 /* -----------------------------adptive-index.html----------------------------- */
 @media (max-width: 1599px) {
   .header__title {
@@ -1112,7 +1116,7 @@ a.ui-button:active,
   }
 
   .benefits__img-500 {
-    width: 350px;
+    width: 450px;
     margin-top: 40px;
   }
 
@@ -1141,8 +1145,6 @@ a.ui-button:active,
     font-size: 20px;
     line-height: 24px;
   }
-
-
 }
 
 @media (max-width: 800px) {
@@ -1152,6 +1154,19 @@ a.ui-button:active,
 
   .help__link {
     display: none;
+  }
+
+  .benefits__text {
+    max-width: 330px;
+  }
+
+  .benefits__img {
+    width: 350px;
+  }
+
+  .benefits__img-500 {
+    width: 350px;
+    margin-top: 40px;
   }
 
   .help__menu {
@@ -1828,7 +1843,6 @@ a.ui-button:active,
     padding-bottom: 100px;
   }
 
-  /* ржака */
   .footer__logo {
     margin-top: 0;
   }
@@ -1848,6 +1862,10 @@ a.ui-button:active,
     order: 1;
     margin: 18px 0;
     background: url('../img/up.png') 72px center no-repeat;
+  }
+
+  .section__col-main {
+    width: 100%;
   }
 }
 
