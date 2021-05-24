@@ -9,6 +9,7 @@
   <title>Двери стандарт</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -144,23 +145,23 @@
     <div class="card-options__section">
       <div class="container">
         <ul class="card__row card-options__row">
-          <li class="options__item options__item_active">Характеристики</li>
-          <li class="options__item">Гарантии </li>
-          <li class="options__item">Доставка и установка</li>
-          <li class="options__item">Отзывы</li>
-          <li class="options__item">Условия возврата</li>
+          <li class="options__item options__item_active" data-path="option-one">Характеристики</li>
+          <li class="options__item" data-path="option-two">Гарантии </li>
+          <li class="options__item" data-path="option-three">Доставка и установка</li>
+          <li class="options__item" data-path="option-four">Отзывы</li>
+          <li class="options__item" data-path="option-five">Условия возврата</li>
         </ul>
-        <div class="card__option">
+        <div class="card__option card__option_active" data-target="option-one">
           <ul class="block__row card-option__row">
-            <li class="card-option__item card-option__item_active">Общие характиристики</li>
-            <li class="card-option__item">Защита от взлома и вскрытия</li>
-            <li class="card-option__item">Декоративная отделка</li>
-            <li class="card-option__item">Фурнитура</li>
-            <li class="card-option__item">Тепло- и звукоизоляция</li>
-            <li class="card-option__item">Герметичность</li>
-            <li class="card-option__item">Удобство эксплуатации</li>
+            <li class="card-option__item card-option__item_active" data-path="one">Общие характиристики</li>
+            <li class="card-option__item" data-path="two">Защита от взлома и вскрытия</li>
+            <li class="card-option__item" data-path="three">Декоративная отделка</li>
+            <li class="card-option__item" data-path="four">Фурнитура</li>
+            <li class="card-option__item" data-path="five">Тепло- и звукоизоляция</li>
+            <li class="card-option__item" data-path="six">Герметичность</li>
+            <li class="card-option__item" data-path="seven">Удобство эксплуатации</li>
           </ul>
-          <table class="options__table   options__table_hidden">
+          <table class="options__table options__table_hidden" data-target="one">
             <tr>
               <td>Производитель <span>-</span></td>
             </tr>
@@ -192,7 +193,7 @@
               <td>Вес двери (Минимальный)<span>-</span></td>
             </tr>
           </table>
-          <table class="options__table">
+          <table class="options__table" data-target="two">
             <tr>
               <td>Количество листов металла<span>-</span></td>
             </tr>
@@ -224,7 +225,7 @@
               <td>Ночная задвижка<span>-</span></td>
             </tr>
           </table>
-          <table class="options__table">
+          <table class="options__table" data-target="three">
             <tr>
               <td>Покрытие полотна и коробки<span>-</span></td>
             </tr>
@@ -241,7 +242,7 @@
               <td>Декоративный порог<span>-</span></td>
             </tr>
           </table>
-          <table class="options__table">
+          <table class="options__table" data-target="four">
             <tr>
               <td>Цвет фурнитруры<span>-</span></td>
             </tr>
@@ -258,7 +259,7 @@
               <td>Декор петель<span>-</span></td>
             </tr>
           </table>
-          <table class="options__table">
+          <table class="options__table" data-target="five">
             <tr>
               <td>Наполнитель дверного полотна<span>-</span></td>
             </tr>
@@ -275,7 +276,7 @@
               <td>Утепление дверной коробки<span>-</span></td>
             </tr>
           </table>
-          <table class="options__table">
+          <table class="options__table" data-target="six">
             <tr>
               <td>Количество контуров уплотнителя<span>-</span></td>
             </tr>
@@ -283,7 +284,7 @@
               <td>Материал уплотнителя<span>-</span></td>
             </tr>
           </table>
-          <table class="options__table">
+          <table class="options__table" data-target="seven">
             <tr>
               <td>Тип дверных петель<span>-</span></td>
             </tr>
@@ -320,10 +321,10 @@
           </table>
         </div>
 
-        <div class="card__option"></div>
-        <div class="card__option"></div>
-        <div class="card__option"></div>
-        <div class="card__option"></div>
+        <div class="card__option" data-target="option-two">2</div>
+        <div class="card__option" data-target="option-three">3</div>
+        <div class="card__option" data-target="option-four">4</div>
+        <div class="card__option" data-target="option-five">5</div>
       </div>
     </div>
     <section class="add-options__section">

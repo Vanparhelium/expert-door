@@ -2891,6 +2891,11 @@ a.ui-button:active,
 
 .card__option {
   margin-top: 50px;
+  display: none;
+}
+
+.card__option_active {
+  display: block;
 }
 
 .card-option__item {
@@ -3108,6 +3113,9 @@ a.ui-button:active,
 .sentens__nav-link {
   position: absolute;
 }
+
+
+
 
 /* -------------------adaptive-card-standart.html-------------------------------------- */
 @media (max-width:1200px) {
@@ -3562,8 +3570,4 @@ a.ui-button:active,
   .sentens__nav-item {
     align-items: center;
   }
-
-
-
-
 }
