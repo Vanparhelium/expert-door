@@ -1079,22 +1079,14 @@ a.ui-button:active,
     padding: 0 34px;
   }
 
-  .header__menu-items {
-    display: none;
-  }
+
 
   .help__btn {
     margin-left: auto;
     justify-content: center;
   }
 
-  .help__link {
-    display: none;
-  }
 
-  .help__menu {
-    display: block;
-  }
 
   .header__title {
     font-size: 66px;
@@ -1199,6 +1191,20 @@ a.ui-button:active,
 
   .footer__col_right {
     order: -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .header__menu-items {
+    display: none;
+  }
+
+  .help__link {
+    display: none;
+  }
+
+  .help__menu {
+    display: block;
   }
 }
 
