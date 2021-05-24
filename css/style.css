@@ -1604,7 +1604,7 @@ a.ui-button:active,
   }
 
   .special-offer {
-    margin-top: 35px;
+    margin-top: 55vh;
   }
 
   .section__row {
@@ -3104,3 +3104,7 @@ a.ui-button:active,
   position: absolute;
 }
 
+/* -------------------adaptive-card-standart.html-------------------------------------- */
+@media (max-width:1200) {
+
+}
