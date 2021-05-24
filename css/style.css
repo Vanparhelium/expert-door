@@ -272,7 +272,7 @@ body {
 }
 
 .line-row__text:nth-child(4) {
-  padding-top: 45px;
+  padding-top: 52px;
 }
 
 .main {
@@ -762,13 +762,10 @@ body {
   padding: 70px 0 26px;
 }
 
-.footer__row {
-  display: flex;
-
-}
-
 .footer__row-top {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .footer__logo {
@@ -838,7 +835,7 @@ body {
 }
 
 .social__link {
-  margin-top: 50px;
+  margin-left: auto;
   padding-right: 15px;
   font-weight: 300;
   font-size: 14px;
@@ -1192,11 +1189,20 @@ a.ui-button:active,
   }
 
   .social__link {
-    margin-top: auto;
+    order: 3;
+    margin-top: -20px;
+  }
+
+  .footer__logo {
+    margin-top: -50px;
+  }
+
+  .footer__col_right {
+    order: -1;
   }
 }
 
-@media (max-width: 779px) {
+@media (max-width: 767px) {
   .container {
     padding: 0 20px;
   }
@@ -1758,10 +1764,20 @@ a.ui-button:active,
     background-size: contain;
   }
 
+  .safety-block__img-500 {
+    background: url('../img/unna\ 4.jpg') center center no-repeat, #F2F2F2;
+  }
+
+  .safety-block__img-bg {
+    background: url('../img/unna2.jpg') center center no-repeat, #F2F2F2;
+  }
+
   .reviews__img {
     width: 150px;
     height: 250px;
+    background: url('../img/Rectangle375.jpg') center center no-repeat;
     background-size: cover;
+
   }
 
   .reviews__section {
@@ -1810,23 +1826,24 @@ a.ui-button:active,
 
   /* ржака */
   .footer__logo {
-    margin-bottom: 50px;
+    margin-top: 0;
   }
 
   .footer__col_right {
+    order: 1;
     margin-top: 20px;
     text-align: left;
+    margin-left: 0;
   }
 
-  .bottom__link-tel {
-    width: 200px;
-    margin-left: -224px;
+  .footer__menu {
+    order: 2;
   }
 
-  .footer__text {
-    width: 200px;
-    margin-left: -224px;
-    margin-top: 4px;
+  .social__link {
+    order: 1;
+    margin: 18px 0;
+    background: url('../img/up.png') 72px center no-repeat;
   }
 }
 
