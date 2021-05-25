@@ -320,16 +320,19 @@ body {
   border-radius: 50%;
 }
 
-.circle::after {
-  animation: round  1s 2s alternate 1 ;
-  animation-fill-mode: backwards;
+.header__line:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #727272;
 }
 
 .header__line {
   position: absolute;
   top: 750px;
   width: 100%;
-  border-top: 1px solid #727272;
 }
 
 .header__line-row {
