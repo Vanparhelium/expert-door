@@ -142,6 +142,7 @@ body {
 }
 
 .header__menu-items {
+  position: relative;
   display: flex;
   margin-left: auto;
 }
@@ -150,11 +151,54 @@ body {
   margin-right: 50px;
 }
 
+.submenu__link,
 .header__menu-link {
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.02em;
   color: #C7C7C7;
+  transition: color .3s ease-in-out;
+}
+
+.header__menu-link:focus,
+.header__menu-link:hover,
+.header__menu-item:hover .submenu__link,
+.header__menu-item:focus .submenu__link,
+.submenu__link:focus,
+.submenu__link:hover {
+  color: #FEFEFE;
+}
+
+.submenu__link::after {
+  position: absolute;
+  content: url('../img/Polygon.png');
+  top: -1px;
+  padding-left: 6px;
+  transition: content .3s ease-in-out;
+}
+
+.header__menu-item:hover .submenu__link::after,
+.header__menu-item:focus .submenu__link::after {
+  content: url('../img/Polygon1.png');
+}
+
+.submenu {
+  position: absolute;
+  padding-top: 20px;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin :0 0;
+  transition: .3s ease-in-out;
+}
+
+.submenu .header__menu-link {
+  margin-bottom: 8px;
+}
+
+.header__menu-item:hover .submenu,
+.header__menu-item:focus .submenu {
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 .help__btn {
