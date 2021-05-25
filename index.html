@@ -12,6 +12,7 @@
   <script defer src="js/main.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
@@ -30,7 +31,8 @@
         <img src="img/logo.svg" alt="Логотип" class="header__logo">
         <a href="index.html" class="main__link"></a>
         <div class="header__menu">
-          <ul class="header__menu-items">
+          <ul class="header__menu-items"  id="menu">
+            <div class="menu__close">&#10005;</div>
             <li class="header__menu-item">
               <a href="catalog.html" class="header__menu-link">Каталог</a>
             </li>
@@ -63,7 +65,7 @@
           </ul>
           <div class="help__btn">
             <a href="#" class="help__link">Помочь выбрать</a>
-            <a href="" class="help__menu">Меню</a>
+            <p class="help__menu menu__btn" id="menuBtn">Меню</p>
           </div>
         </div>
 
@@ -71,7 +73,7 @@
       <div class="header__title">Expert</div>
       <div class="consultation main-btn">
         <a href="#" class="consultation__link main-btn__link">Получить консультацию</a>
-        <div class="arrow main-btn__arrow"><span class="circle main-btn__circle"></span></div>
+        <div class="arrow main-btn__arrow"><span class="circle circle2"></span></div>
       </div>
     </div>
     <div class="header__line">

@@ -1,4 +1,19 @@
 window.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('#menuBtn').addEventListener('click', function() {
+    document.querySelector('#menu').classList.toggle('header__menu-items_visible');
+    document.querySelector('.menu__close').classList.toggle('menu__close_active');
+    });
+  document.querySelector('.menu__close').addEventListener('click', function() {
+    document.querySelector('#menu').classList.toggle('header__menu-items_visible');
+    document.querySelector('.menu__close').classList.toggle('menu__close_active');
+  });
+  document.querySelector('.submenu__link').addEventListener('click', function() {
+    document.querySelector('.submenu').classList.toggle('submenu__block');
+  });
+
+
+
+
 
   // accordion index.html
 $( function() {

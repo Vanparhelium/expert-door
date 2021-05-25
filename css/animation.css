@@ -1,0 +1,105 @@
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-btn {
+  0% {
+    transform: scale(0, 0);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes l-r {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.help__btn:after {
+  animation: menu-btn .6s alternate linear .5s 1 both;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.header__top-row {
+  animation: opacity .6s alternate linear 1;
+}
+
+.consultation__link {
+  animation: opacity .6s 1s alternate linear 1 both;
+}
+
+.arrow {
+  animation: l-r .6s 1.5s alternate linear 1 both;
+}
+
+.arrow::after {
+  animation: opacity .6s 1.5s alternate linear 1 both;
+}
+
+.circle {
+  animation: circle .6s 2s alternate linear 1 both;
+}
+
+
+@keyframes rote {
+  0% {
+    clip: rect(25px, 50px, 50px, 0px);
+    /* clip: rect(0px, 50px, 50px, 25px); право */
+  }
+
+  100% {
+    clip: rect(0, 25px, 50px, 0);
+    /* clip: rect(0px, 50px, 25px, 0); верх */
+  }
+  /* 0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  } */
+}
+
+
+@keyframes round {
+  0% {
+    clip: rect(0px, 50px, 25px, 25px);
+    /* clip: rect(0, 25px, 50px, 0); лево */
+  }
+
+  100% {
+    clip: rect(0px, 50px, 50px, 25px);
+    /* clip: rect(0, 25px, 25px, 0); левая четверть */
+  }
+
+
+/*
+  100% {
+    /* clip: rect(25px, 50px, 50px, 0px); низ  */
+
+
+}
