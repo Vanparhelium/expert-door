@@ -11,6 +11,11 @@ $( function() {
   });
 });
 
+document.querySelector('.block__text-more').addEventListener('click', function() {
+  document.querySelector('.block__more').classList.toggle('block__more_active');
+  document.querySelector('.accordion__arrow-more').classList.toggle('accordion__arrow-more_active');
+});
+
 // tabs card-standart.html
 document.querySelectorAll('.options__item').forEach(function (tabsBtn) {
   tabsBtn.addEventListener('click', function(event) {

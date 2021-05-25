@@ -673,12 +673,36 @@ body {
 
 .block__text-more {
   margin-top: 20px;
+  cursor: pointer;
+  transition: color .3s ease-in-out;
 }
+
+.block__text-more:hover {
+  color: #0222A5;
+}
+
+.accordion__arrow-more_active  {
+  transform: rotate(180deg);
+}
+
+.block__more {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin :0 0;
+  transition: .5s ease-in-out;
+}
+
+.block__more_active {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
 
 .accordion__arrow-more {
   display: inline-block;
   margin-left: 20px;
   height: 12px;
+  transition: transform .3s ease-in-out;
 }
 
 .safety-block__img-500 {
