@@ -91,7 +91,7 @@
     /* clip: rect(0, 25px, 50px, 0); лево */
   }
 
-  100% {
+  50% {
     clip: rect(0px, 50px, 50px, 25px);
     /* clip: rect(0, 25px, 25px, 0); левая четверть */
   }

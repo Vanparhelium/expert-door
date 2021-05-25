@@ -290,7 +290,6 @@ body {
 }
 
 .circle,
-.circle2,
 .main-btn__circle {
   position: absolute;
   width: 50px;
@@ -310,13 +309,10 @@ body {
   border: 1px solid #0222A5;
 }
 
-.circle::after
-/* .circle2::before  */
-{
+.circle::after {
   position: absolute;
   content: '';
   border: 1px solid #E6E6E6;
-  /* box-shadow: inset 0 0 0 1px #E6E6E6; */
   top: 0;
   left: 0;
   right: 0;
@@ -325,15 +321,9 @@ body {
 }
 
 .circle::after {
-  animation: round  1s 2s alternate 1 both;
+  animation: round  1s 2s alternate 1 ;
+  animation-fill-mode: backwards;
 }
-
-.circle2::before {
-  animation: rot linear .5s  infinite 1 both;
-  animation-delay: 1s;
-}
-
-
 
 .header__line {
   position: absolute;
