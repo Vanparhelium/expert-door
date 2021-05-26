@@ -35,7 +35,9 @@ if (animItems.length > 0) {
       if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
         animItem.classList.add('_active');
       } else {
-        animItem.classList.remove('_active');
+        if (!animItem.classList.contains('_anim-no-hide')) {
+          animItem.classList.remove('._active');
+        }
       }
     }
   }
@@ -46,12 +48,13 @@ if (animItems.length > 0) {
     return { top: rect.top + scrollTop, Left: rect.left + scrollLeft }
   }
 
+
+
+
   setTimeout(() => {
     animOnScroll();
-  }, 4900);
-
+  }, 5000);
 }
-
 
 
 window.addEventListener('DOMContentLoaded', function () {
