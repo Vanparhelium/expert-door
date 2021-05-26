@@ -90,7 +90,7 @@
     /* clip: rect(0, 25px, 50px, 0); лево */
   }
 
-  50% {
+  100% {
     clip: rect(0px, 50px, 50px, 25px);
     /* clip: rect(0, 25px, 25px, 0); левая четверть */
   }
@@ -104,7 +104,7 @@
 }
 
 .circle::after {
-  animation: round  1s 7s alternate 1 ;
+  animation: round  .5s 7s alternate 1 ;
   animation-fill-mode: backwards;
 }
 
@@ -141,6 +141,7 @@
 
 .preloader {
   position: fixed;
+  height: 100%;
   left: 0;
   top: 0;
   right: 0;
@@ -155,7 +156,7 @@
 .preloder__row {
   position: relative;
   text-align: center;
-  margin-top: 290px;
+  margin-top: 300px;
   animation: opacity .6s 0.5s alternate linear 1 both;
 }
 
@@ -253,6 +254,7 @@
 .done {
   opacity: 0;
   visibility: hidden;
+  display: none;
   transition-property: opacity, visibility;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
