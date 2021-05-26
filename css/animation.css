@@ -87,7 +87,7 @@
 }
 
 .header__line:after {
-  animation: line .7s 7.8s alternate linear 1 both;
+  animation: line .7s 2.9s alternate linear 1 both;
 }
 
 .line-row__text._active:nth-child(1) {
@@ -339,7 +339,7 @@
  .benefits__img-500._active,
  .col-300__img._active {
     opacity: 1;
-    animation: image 1s alternate linear 1 both;
+    animation: image 1.2s alternate linear 1 both;
  }
 
  @keyframes imageRL {
@@ -390,5 +390,16 @@
 
 .col-600__img._active {
     opacity: 1;
-    animation: imageRL 1s alternate linear 1 both;
+    animation: imageRL 1.2s alternate linear 1 both;
+}
+
+
+@keyframes btn-line {
+  0% {
+    clip: inset(0 0 0 0);
+  }
+
+  100% {
+    clip: inset(0 0 0 20%);
+  }
 }
