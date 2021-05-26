@@ -40,27 +40,27 @@
   }
 }
 
-.help__btn:after {
-  animation: menu-btn .6s alternate linear .5s 1 both;
+.help__btn::after {
+  animation: menu-btn .6s alternate linear 5s 1 both;
 }
 
-.header__top-row {
+.header__top-row._active {
   animation: opacity .6s alternate linear 1;
 }
 
-.consultation__link {
+.consultation__link._active {
   animation: opacity .6s 1s alternate linear 1 both;
 }
 
-.arrow {
+.arrow._active {
   animation: l-r .6s 1.5s alternate linear 1 both;
 }
 
 .arrow::after {
-  animation: opacity .6s 1.5s alternate linear 1 both;
+  animation: opacity .6s 6.5s alternate linear 1 both;
 }
 
-.circle {
+.circle._active {
   animation: circle .6s 2s alternate linear 1 both;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .circle::after {
-  animation: round  1s 2s alternate 1 ;
+  animation: round  1s 7s alternate 1 ;
   animation-fill-mode: backwards;
 }
 
@@ -119,22 +119,22 @@
 }
 
 .header__line:after {
-  animation: line .7s 2.8s alternate linear 1 both;
+  animation: line .7s 7.8s alternate linear 1 both;
 }
 
-.line-row__text:nth-child(1) {
-  animation: opacity .7s 2.5s alternate linear 1 both;
+.line-row__text._active:nth-child(1) {
+  animation: opacity .7s 2.4s alternate linear 1 both;
 }
 
-.line-row__text:nth-child(2) {
-  animation: opacity .7s 2.6s alternate linear 1 both;
+.line-row__text._active:nth-child(2) {
+  animation: opacity .7s 2.55s alternate linear 1 both;
 }
 
-.line-row__text:nth-child(3) {
+.line-row__text._active:nth-child(3) {
   animation: opacity .7s 2.7s alternate linear 1 both;
 }
 
-.line-row__text:nth-child(4) {
+.line-row__text._active:nth-child(4) {
   animation: opacity .7s 2.8s alternate linear 1 both;
 }
 
