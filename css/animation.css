@@ -42,7 +42,6 @@
 
 .help__btn:after {
   animation: menu-btn .6s alternate linear .5s 1 both;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 .header__top-row {
@@ -137,4 +136,124 @@
 
 .line-row__text:nth-child(4) {
   animation: opacity .7s 2.8s alternate linear 1 both;
+}
+
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #010101;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.preloder__row {
+  position: relative;
+  text-align: center;
+  margin-top: 290px;
+  animation: opacity .6s 0.5s alternate linear 1 both;
+}
+
+.preloader__item {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  height: 85px;
+}
+
+.preloader__item::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  border-top: 1px solid #222222;
+  border-bottom: 1px solid #222222;
+}
+
+.preloader__text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  color: #C7C7C7;
+  opacity: 0;
+}
+
+
+@keyframes preloadText {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, -30%);
+    opacity: 0;
+  }
+}
+
+@keyframes preloadText2 {
+  0% {
+    transform: translate(0, 30%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes preline {
+  0% {
+    opacity: 0;
+    transform: scale(0, 1);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.preloader__item {
+  animation: opacity .6s .8s alternate linear 1 both;
+}
+
+.preloader__item::after {
+  animation: preline .5s alternate linear 1s 1 both;
+}
+
+.preloader__text {
+  animation: opacity .6s alternate linear  2s 1 both;
+}
+
+.preloader__text1 {
+  animation: preloadText 1.2s 2s alternate ease-in-out 1 both;
+}
+
+.preloader__text2 {
+  animation: preloadText2 1.2s 3.2s alternate ease-in-out 1 both;
+}
+
+.done {
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }

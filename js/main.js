@@ -1,3 +1,22 @@
+
+document.body.onload = function () {
+
+  setTimeout(() => {
+    var preloader = document.querySelector('#page-preloader');
+    if( !preloader.classList.contains('done'))
+    {
+      preloader.classList.add('done');
+    }
+    var header = document.querySelector('#header');
+    if( !header.classList.contains('header__visible'))
+    {
+      header.classList.add('header__visible');
+    }
+  }, 4900);
+};
+
+
+
 window.addEventListener('DOMContentLoaded', function () {
   document.querySelector('#menuBtn').addEventListener('click', function() {
     document.querySelector('#menu').classList.toggle('header__menu-items_visible');
