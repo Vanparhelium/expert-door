@@ -30,18 +30,6 @@
   }
 }
 
-@keyframes circle {
-  0% {
-    transform: rotate(0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    opacity: 1;
-  }
-}
-
 .help__btn-bg._active {
   animation: menu-btn .6s alternate linear 1 both;
 }
@@ -50,65 +38,42 @@
   animation: opacity .6s alternate linear 1;
 }
 
-.consultation__link._active {
+.main-btn__link._active {
   animation: opacity .6s 1s alternate linear 1 both;
 }
 
-.arrow._active {
+.main-btn__arrow._active {
   animation: l-r .6s 1.5s alternate linear 1 both;
 }
 
-.arrow::after {
-  animation: opacity .6s 6.5s alternate linear 1 both;
+.main-btn__arrow._active::after,
+.arrow._active::after {
+  animation: opacity .6s 1.5s alternate linear 1 both;
 }
 
+.main-btn__circle._active,
 .circle._active {
-  animation: elips .6s 2s alternate linear 1 both;
+  animation: circle .6s 2s alternate linear 1 backwards;
 }
 
+@keyframes circle {
+  0% { clip-path: polygon(32% 15%, 70% 15%, 85% 32%, 86% 69%, 69% 87%, 29% 88%, 10% 68%, 10% 31%);  }
 
-@keyframes rote {
-  0% {
+  11% { clip-path: polygon(32% 15%, 40% 0, 100% 0, 86% 69%, 69% 87%, 29% 88%, 10% 68%, 10% 31%); }
 
-    clip: rect(25px, 50px, 50px, 0px);
-    /* clip: rect(0px, 50px, 50px, 25px); право */
-  }
+  22% { clip-path: polygon(32% 15%, 40% 0, 100% 0, 100% 60%, 69% 87%, 29% 88%, 10% 68%, 10% 31%); }
 
-  100% {
-    clip: rect(0, 25px, 50px, 0);
-    /* clip: rect(0px, 50px, 25px, 0); верх */
-  }
-  /* 0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(180deg);
-  } */
-}
+  33% { clip-path: polygon(32% 15%, 40% 0, 100% 0, 100% 60%, 100% 100%, 29% 88%, 10% 68%, 10% 31%); }
 
+  44% { clip-path: polygon(32% 15%, 40% 0, 100% 0, 100% 60%, 100% 100%, 50% 100%, 10% 68%, 10% 31%); }
 
-@keyframes round {
-  0% {
-    clip: rect(0px, 50px, 25px, 25px);
-    /* clip: rect(0, 25px, 50px, 0); лево */
-  }
+  50% { clip-path: polygon(32% 15%, 40% 0, 100% 0, 100% 60%, 100% 100%, 50% 100%, 0 100%, 10% 31%); }
 
-  100% {
-    clip: rect(0px, 50px, 50px, 25px);
-    /* clip: rect(0, 25px, 25px, 0); левая четверть */
-  }
+  75% { clip-path: polygon(25% 20%, 40% 0, 100% 0, 100% 60%, 100% 100%, 0 99%, 0 63%, 15% 40%); }
 
+  85% { clip-path: polygon(25% 20%, 40% 0, 100% 0, 100% 60%, 100% 100%, 0 99%, 0 63%, 0 23%); }
 
-/*
-  100% {
-    /* clip: rect(25px, 50px, 50px, 0px); низ  */
-
-
-}
-
-.circle::after {
-  animation: round  .5s 7s alternate 1 ;
-  animation-fill-mode: backwards;
+  100% { clip-path: polygon(0 0, 40% 0, 100% 0, 100% 60%, 100% 100%, 0 99%, 0 63%, 0 26%); }
 }
 
 @keyframes line {
@@ -275,6 +240,7 @@
   }
 }
 
+.callback__tel-line._active,
 .bottom__line1._active {
     animation: border .6s alternate linear 1 both;
   }
@@ -311,45 +277,118 @@
     animation: border .4s alternate linear 3.4s 1 both;
   }
 
-  @keyframes comp {
-    0% {
-      outline: none;
-    }
-
-    100% {
-      outline: 1px solid red;
-    }
+  ._active li:nth-child(9) .bottom__line{
+    animation: border .4s alternate linear 3.8s 1 both;
   }
 
-
-
-  @keyframes elips {
-    0% {
-      clip-path: polygon(50% 10%, 85% 40%, 85% 80%, 10% 80%, 10% 50%);
-     }
-
-    20% {
-      clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 85%, 10% 50%);
-     }
-
-    40% {
-      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 85%, 10% 50%);
-     }
-
-    60% {
-      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
-    }
-
-    80% {
-      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
-    }
-
-    100% {
-      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 0);
-     }
-
+  ._active li:nth-child(10) .bottom__line{
+    animation: border .4s alternate linear 4.6s 1 both;
   }
 
   .component._active {
-    animation: elips .6s alternate linear 1 both;
+    animation: circle .6s alternate linear .8s 1 backwards;
   }
+
+  @keyframes image {
+    0% {
+      clip-path: polygon(100% 0, 100% 0, 0 0, 0 0);
+    }
+
+    10% {
+      clip-path: polygon(100% 10%, 100% 0, 0 0, 0 10%);
+    }
+
+    20% {
+      clip-path: polygon(100% 20%, 100% 0, 0 0, 0 20%);
+    }
+
+    30% {
+      clip-path: polygon(100% 30%, 100% 0, 0 0, 0 30%);
+    }
+
+    40% {
+      clip-path: polygon(100% 40%, 100% 0, 0 0, 0 40%);
+    }
+
+    50% {
+      clip-path: polygon(100% 50%, 100% 0, 0 0, 0 50%);
+    }
+
+    60% {
+      clip-path: polygon(100% 60%, 100% 0, 0 0, 0 60%);
+    }
+
+    70% {
+      clip-path: polygon(100% 70%, 100% 0, 0 0, 0 70%);
+    }
+
+    80% {
+      clip-path: polygon(100% 80%, 100% 0, 0 0, 0 80%);
+    }
+
+    90% {
+      clip-path: polygon(100% 90%, 100% 0, 0 0, 0 90%);
+    }
+
+    100% {
+      clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
+    }
+  }
+
+ .benefits__img._active,
+ .benefits__img-500._active,
+ .col-300__img._active {
+    opacity: 1;
+    animation: image 1s alternate linear 1 both;
+ }
+
+ @keyframes imageRL {
+  0% {
+    clip-path: polygon(100% 100%, 100% 0, 100% 0, 100% 100%);
+  }
+
+  10% {
+    clip-path: polygon(100% 100%, 100% 0, 90% 0, 90% 100%);
+  }
+
+  20% {
+    clip-path: polygon(100% 100%, 100% 0, 80% 0, 80% 100%);
+  }
+
+  30% {
+    clip-path: polygon(100% 100%, 100% 0, 70% 0, 70% 100%);
+  }
+
+  40% {
+    clip-path: polygon(100% 100%, 100% 0, 60% 0, 60% 100%);
+  }
+
+  50% {
+    clip-path: polygon(100% 100%, 100% 0, 50% 0, 50% 100%);
+  }
+
+  60% {
+    clip-path: polygon(100% 100%, 100% 0, 40% 0, 40% 100%);
+  }
+
+  70% {
+    clip-path: polygon(100% 100%, 100% 0, 30% 0, 30% 100%);
+  }
+
+  80% {
+    clip-path: polygon(100% 100%, 100% 0, 20% 0, 20% 100%);
+  }
+
+  90% {
+    clip-path: polygon(100% 100%, 100% 0, 10% 0, 10% 100%);
+  }
+
+  100% {
+    clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
+  }
+}
+
+.col-600__img._active {
+    opacity: 1;
+    animation: imageRL 1s alternate linear 1 both;
+}
