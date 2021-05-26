@@ -21,9 +21,11 @@
 @keyframes l-r {
   0% {
     width: 0;
+    opacity: 0;
   }
 
   100% {
+    opacity: 1;
     width: 300px;
   }
 }
@@ -61,12 +63,13 @@
 }
 
 .circle._active {
-  animation: circle .6s 2s alternate linear 1 both;
+  animation: elips .6s 2s alternate linear 1 both;
 }
 
 
 @keyframes rote {
   0% {
+
     clip: rect(25px, 50px, 50px, 0px);
     /* clip: rect(0px, 50px, 50px, 25px); право */
   }
@@ -259,3 +262,94 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
+
+@keyframes border {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+.bottom__line1._active {
+    animation: border .6s alternate linear 1 both;
+  }
+
+  ._active li:nth-child(1) .bottom__line {
+    animation: border .4s .6s alternate linear  1 both;
+  }
+
+  ._active li:nth-child(2) .bottom__line {
+    animation: border .4s 1s alternate linear 1 both;
+  }
+
+  ._active li:nth-child(3) .bottom__line {
+    animation: border .4s 1.4s alternate linear 1 both;
+  }
+
+  ._active li:nth-child(4) .bottom__line {
+    animation: border .4s alternate linear 1.8s 1 both;
+  }
+
+  ._active li:nth-child(5) .bottom__line {
+    animation: border .4s alternate linear 2.2s 1 both;
+  }
+
+  ._active li:nth-child(6) .bottom__line {
+    animation: border .4s alternate linear 2.6s 1 both;
+  }
+
+  ._active li:nth-child(7) .bottom__line{
+    animation: border .4s alternate linear 3s 1 both;
+  }
+
+  ._active li:nth-child(8) .bottom__line{
+    animation: border .4s alternate linear 3.4s 1 both;
+  }
+
+  @keyframes comp {
+    0% {
+      outline: none;
+    }
+
+    100% {
+      outline: 1px solid red;
+    }
+  }
+
+
+
+  @keyframes elips {
+    0% {
+      clip-path: polygon(50% 10%, 85% 40%, 85% 80%, 10% 80%, 10% 50%);
+     }
+
+    20% {
+      clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 85%, 10% 50%);
+     }
+
+    40% {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 85%, 10% 50%);
+     }
+
+    60% {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+    }
+
+    80% {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+    }
+
+    100% {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+     }
+
+  }
+
+  .component._active {
+    animation: elips .6s alternate linear 1 both;
+  }

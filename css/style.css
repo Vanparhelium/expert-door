@@ -119,6 +119,7 @@ body {
 .container__header {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 .header__top-row {
@@ -161,7 +162,15 @@ body {
 }
 
 .menu__close {
-  display: none;
+  margin-bottom: 30px;
+  opacity: 0;
+  margin-left: auto;
+  font-size: 30px;
+  color: #C7C7C7;
+  visibility: hidden;
+  transition-property: visibility, opacity;
+  transition-duration: .6s;
+  transition-timing-function: ease-in-out;
 }
 
 .submenu__link,
@@ -239,6 +248,8 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
+
 
 .help__btn:focus .help__btn-bg,
 .help__btn:hover .help__btn-bg {
@@ -398,9 +409,19 @@ body {
 }
 
 .section__row {
+  position: relative;
   display: flex;
   align-items: flex-end;
   padding-bottom: 10px;
+
+}
+
+.bottom__line1,
+.bottom__line {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  width: 100%;
   border-bottom: 1px solid #E6E6E6;
 }
 
@@ -425,10 +446,10 @@ body {
 }
 
 .col__item {
+  position: relative;
   width: 100%;
   display: flex;
   padding: 20px 0 10px;
-  border-bottom: 1px solid #E6E6E6;
 }
 
 .col__items {
@@ -469,7 +490,8 @@ body {
   right: 60px;
   height: 45px;
   width: 23px;
-  background: url('../img/Vector.svg') center center no-repeat;background-size: cover;
+  background: url('../img/Vector.svg') center center no-repeat;
+  background-size: cover;
 }
 
 .special-offer__box_small {
@@ -1291,32 +1313,31 @@ a.ui-button:active,
     opacity: 0;
     position: absolute;
     z-index: 20;
-    right: 0;
+    right: -20px;
     top: 0;
     bottom: 0;
     margin: 0;
     width: 55%;
+    height: 100vh;
     padding: 40px 34px 40px 30px;
     flex-direction: column;
     background: #FEFEFE;
     box-shadow: 0 5px 40px rgba(0, 0, 0, .1);
-    transition-property: visibility, opacity;
+    transform: translateX(50%);
+    transition-property: visibility, opacity, transform;
     transition-duration: .6s;
     transition-timing-function: ease-in-out;
-
   }
 
   .header__menu-items_visible {
     visibility: visible;
     opacity: 1;
+    transform: translateX(0);
   }
 
   .menu__close_active {
-    margin-bottom: 30px;
-    display: block;
-    margin-left: auto;
-    font-size: 30px;
-    color: #C7C7C7;
+    opacity: 1;
+    visibility: visible;
   }
 
   .header__menu-item {
