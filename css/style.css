@@ -1283,8 +1283,7 @@ a.ui-button:active,
     flex-direction: column;
     background: #FEFEFE;
     box-shadow: 0 5px 40px rgba(0, 0, 0, .1);
-    transform: translateX(50%);
-    transition-property: visibility, opacity, transform;
+    transition-property: visibility, opacity;
     transition-duration: .6s;
     transition-timing-function: ease-in-out;
 
@@ -1293,7 +1292,6 @@ a.ui-button:active,
   .header__menu-items_visible {
     visibility: visible;
     opacity: 1;
-    transform: translateX(0);
   }
 
   .menu__close_active {
