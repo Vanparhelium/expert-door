@@ -40,8 +40,8 @@
   }
 }
 
-.help__btn::after {
-  animation: menu-btn .6s alternate linear 5s 1 both;
+.help__btn-bg._active {
+  animation: menu-btn .6s alternate linear 1 both;
 }
 
 .header__top-row._active {
