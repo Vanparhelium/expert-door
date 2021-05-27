@@ -2528,7 +2528,7 @@ a.ui-button:active,
 }
 
 .filter-box__content_down {
-  margin-top: 70px;
+  transform: translateY(70px);
 }
 
 .old__sale {
@@ -2788,7 +2788,7 @@ a.ui-button:active,
   }
 
   .filter-box__content_down {
-    margin-top: 50px;
+    transform: translateY(50px);
   }
 
   .filter__box {
@@ -2821,7 +2821,7 @@ a.ui-button:active,
  }
 
   .filter-box__content_down {
-    margin-top: 0;
+    transform: translateY(0);
   }
 
   .filter__box {
