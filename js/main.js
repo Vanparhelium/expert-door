@@ -38,12 +38,6 @@ if (animItems.length > 0) {
 
 
 
-  $( "#accordion" ).accordion({
-    active: 'false',
-    collapsible: 'true',
-    heightStyle:  'content',
-    icons: 'false',
-  });
 
 
   document.querySelector('#menuBtn').addEventListener('click', function() {
