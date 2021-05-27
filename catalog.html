@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Каталог</title>
+  <script defer src="js/main.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
 </head>
 
 <body>
@@ -18,26 +20,50 @@
         <img src="img/logo.svg" alt="Логотип" class="header__logo">
         <a href="index.html" class="main__link"></a>
         <div class="header__menu">
-          <ul class="header__menu-items">
-            <li class="header__menu-item">
-              <a href="catalog.html" class="header__menu-link header__menu-link_grey">Каталог</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="service.html" class="header__menu-link header__menu-link_grey">Сервис</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="promo.html" class="header__menu-link header__menu-link_grey">Акции</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="about-manufacturer" class="header__menu-link header__menu-link_grey">О производителе</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="contacts.html" class="header__menu-link header__menu-link_grey">Контакты</a>
-            </li>
-          </ul>
-          <div class="help__btn help__btn-light">
+          <div class="header__menu-items" id="menu">
+            <div class="menu__close">&#10005;</div>
+            <ul class="header__menu-block">
+              <li class="header__menu-item  header__menu-item_first">
+                <a href="catalog.html" class="header__menu-link header__menu-link_grey">Каталог</a>
+              </li>
+              <li class="header__menu-item">
+                <p class="submenu__link header__menu-link_grey">Сервис</p>
+                <ul class="submenu">
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Как выбрать двери</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Доставка и установка</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Порядок оплаты</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Гарантии</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__menu-item">
+                <a href="promo.html" class="header__menu-link header__menu-link_grey">Акции</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="about-manufacturer" class="header__menu-link header__menu-link_grey">О производителе</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="contacts.html" class="header__menu-link header__menu-link_grey">Контакты</a>
+              </li>
+            </ul>
+            <div class="main-btn menu__main-btn">
+              <a href="#" class="main-btn__link _anim-items">Помочь выбрать</a>
+              <div class="main-btn__arrow view-btn__arrow _anim-items">
+                <span class="main-btn__circle _anim-items"></span>
+              </div>
+            </div>
+          </div>
+          <div class="help__btn" id="menuBtn">
+            <div class="help__btn-bg help__btn-light _anim-items"></div>
             <a href="#" class="help__link help__link_gray">Помочь выбрать</a>
-            <a href="" class="help__menu help__link_gray">Меню</a>
+            <p class="help__menu menu__btn help__link_gray">Меню</p>
           </div>
         </div>
       </div>
@@ -329,9 +355,11 @@
           </div>
         </div>
         <div class="block__row block__row-pages">
-          <div class="main-btn">
-            <a href="#" class="main-btn__link">Перейти в каталог</a>
-            <div class="main-btn__arrow"><span class="main-btn__circle"></span></div>
+          <div class="main-btn catlog__main-btn">
+            <a href="#" class="main-btn__link _anim-items">Перейти в каталог</a>
+            <div class="main-btn__arrow view-btn__arrow _anim-items">
+              <span class="main-btn__circle _anim-items"></span>
+            </div>
           </div>
           <div class="pages">
             1 <span class="pages__line"></span> 2
@@ -454,7 +482,7 @@
             <div class="newcomer-btn">
               <a href="#" class="main-btn__link newcomer-btn__link">Получить скидку</a>
               <div class="main-btn__arrow newcomer-btn__arrow"><span
-                  class="main-btn__circle newcomer-btn__circle"></span></div>
+                  class="circle"></span></div>
             </div>
             <div class="newcomer__bullet">
               <span class="bullet bullet__active"></span>

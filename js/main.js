@@ -38,14 +38,13 @@ if (animItems.length > 0) {
 
 
 
-$( function() {
   $( "#accordion" ).accordion({
     active: 'false',
     collapsible: 'true',
     heightStyle:  'content',
     icons: 'false',
   });
-  });
+
 
   document.querySelector('#menuBtn').addEventListener('click', function() {
     document.querySelector('#menu').classList.toggle('header__menu-items_visible');

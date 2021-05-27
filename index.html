@@ -81,10 +81,10 @@
               </div>
             </div>
           </div>
-          <div class="help__btn">
+          <div class="help__btn" id="menuBtn">
             <div class="help__btn-bg _anim-items"></div>
             <a href="#" class="help__link">Помочь выбрать</a>
-            <p class="help__menu menu__btn" id="menuBtn">Меню</p>
+            <p class="help__menu menu__btn">Меню</p>
           </div>
         </div>
 
@@ -578,6 +578,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    $( function() {
+  $( "#accordion" ).accordion({
+    active: 'false',
+    collapsible: 'true',
+    heightStyle:  'content',
+    icons: 'false',
+  });
+  });
+  </script>
 
   <script type="text/javascript">
 
