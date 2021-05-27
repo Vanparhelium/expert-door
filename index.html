@@ -41,38 +41,46 @@
         <img src="img/logo.svg" alt="Логотип" class="header__logo">
         <a href="index.html" class="main__link"></a>
         <div class="header__menu">
-          <ul class="header__menu-items" id="menu">
+          <div class="header__menu-items" id="menu">
             <div class="menu__close">&#10005;</div>
-            <li class="header__menu-item">
-              <a href="catalog.html" class="header__menu-link">Каталог</a>
-            </li>
-            <li class="header__menu-item">
-              <p class="submenu__link">Сервис</p>
-              <ul class="submenu">
-                <li class="header__menu-item">
-                  <a href="" class="header__menu-link">Как выбрать двери</a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="" class="header__menu-link">Доставка и установка</a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="" class="header__menu-link">Порядок оплаты</a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="" class="header__menu-link">Гарантии</a>
-                </li>
-              </ul>
-            </li>
-            <li class="header__menu-item">
-              <a href="promo.html" class="header__menu-link">Акции</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="about-manufacturer" class="header__menu-link">О производителе</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="contacts.html" class="header__menu-link">Контакты</a>
-            </li>
-          </ul>
+            <ul class="header__menu-block">
+              <li class="header__menu-item  header__menu-item_first">
+                <a href="catalog.html" class="header__menu-link">Каталог</a>
+              </li>
+              <li class="header__menu-item">
+                <p class="submenu__link">Сервис</p>
+                <ul class="submenu">
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link">Как выбрать двери</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link">Доставка и установка</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link">Порядок оплаты</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link">Гарантии</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__menu-item">
+                <a href="promo.html" class="header__menu-link">Акции</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="about-manufacturer" class="header__menu-link">О производителе</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="contacts.html" class="header__menu-link">Контакты</a>
+              </li>
+            </ul>
+            <div class="main-btn menu__main-btn">
+              <a href="#" class="main-btn__link _anim-items">Помочь выбрать</a>
+              <div class="main-btn__arrow view-btn__arrow _anim-items">
+                <span class="main-btn__circle _anim-items"></span>
+              </div>
+            </div>
+          </div>
           <div class="help__btn">
             <div class="help__btn-bg _anim-items"></div>
             <a href="#" class="help__link">Помочь выбрать</a>
@@ -83,9 +91,9 @@
       </div>
       <div class="header__title">Expert</div>
       <div class="consultation main-btn">
-        <a href="#" class="consultation__link main-btn__link _anim-items">Получить консультацию</a>
-        <div class="arrow main-btn__arrow _anim-items">
-          <span class="circle _anim-items"></span>
+        <a href="#" class="consultation__link main-btn__link">Получить консультацию</a>
+        <div class="arrow main-btn__arrow">
+          <span class="circle"></span>
         </div>
       </div>
     </div>
@@ -176,7 +184,7 @@
           </div>
         </div>
         <div class="block__row block__row-pages">
-          <div class="main-btn">
+          <div class="main-btn catlog__main-btn">
             <a href="#" class="main-btn__link _anim-items">Перейти в каталог</a>
             <div class="main-btn__arrow view-btn__arrow _anim-items">
               <span class="main-btn__circle _anim-items"></span>
@@ -404,7 +412,7 @@
         <div class="block__row safety-block__row">
           <div class="section__col-2 safety-section__col-2">
             <h6 class="safety__section-title">Штыревой антисрез</h6>
-            <div class="main-btn-600 main-btn-safety main-btn__hidden">
+            <div class="main-btn-benefits main-btn-safety main-btn__hidden">
               <a href="#" class="main-btn__link main-btn-benefits__link main-btn__link">Узнать стоимость</a>
               <div class="main-btn__arrow main-btn-benefits__arrow"><span
                   class="main-btn__circle main-btn-benefits__circle"></span>
@@ -462,7 +470,7 @@
         <div class="block__row safety-block__row">
           <div class="section__col-2 safety-section__col-2">
             <h6 class="safety__section-title block__text-420">Дополнительная защита примыкания</h6>
-            <div class="main-btn-600 main-btn-safety main-btn__hidden">
+            <div class="main-btn-benefits main-btn-safety main-btn__hidden">
               <a href="#" class="main-btn__link main-btn-benefits__link">Узнать стоимость</a>
               <div class="main-btn__arrow main-btn-benefits__arrow"><span
                   class="main-btn__circle main-btn-benefits__circle"></span>
@@ -570,6 +578,33 @@
       </div>
     </div>
   </footer>
+
+  <script type="text/javascript">
+
+document.body.onload = function () {
+
+setTimeout(() => {
+  var preloader = document.querySelector('#page-preloader');
+
+  if( !preloader.classList.contains('done'))
+  {
+    preloader.classList.add('done');
+  }
+  var header = document.querySelector('#header');
+  if( !header.classList.contains('header__visible'))
+  {
+    header.classList.add('header__visible');
+  }
+}, 4900);
+};
+
+document.querySelector('.block__text-more').addEventListener('click', function() {
+  document.querySelector('.block__more').classList.toggle('block__more_active');
+  document.querySelector('.accordion__arrow-more').classList.toggle('accordion__arrow-more_active');
+});
+  </script>
+
+
 </body>
 
 </html>
