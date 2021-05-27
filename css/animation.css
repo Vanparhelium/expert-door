@@ -18,6 +18,20 @@
   }
 }
 
+@keyframes arrow-lr {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.1);
+    transform-origin: left;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
 @keyframes l-r {
   0% {
     width: 0;
@@ -37,28 +51,28 @@
 }
 
 .help__btn-bg._active {
-  animation: menu-btn .6s alternate linear 1 both;
+  animation: menu-btn .8s alternate linear 1 both;
 }
 
 .header__top-row._active {
-  animation: opacity .6s alternate linear 1;
+  animation: opacity .8s alternate linear 1;
 }
 
 .main-btn__link._active {
-  animation: opacity .6s 1s alternate linear 1 both;
+  animation: opacity .8s 1s alternate linear 1 both;
 }
 
 .main-btn__arrow._active {
-  animation: l-r .6s 1.5s alternate linear 1 both;
+  animation: l-r .8s 1.5s alternate linear 1 both;
 }
 
 .main-btn__arrow._active::after,
 .arrow._active::after {
-  animation: opacity .6s 1.5s alternate linear 1 both;
+  animation: opacity .8s 1.5s alternate linear 1 both;
 }
 
 .newcomer-btn._active {
-  animation: opacity .6s alternate linear 1 both;
+  animation: opacity .8s alternate linear 1 both;
 }
 
 .filter-box__content_down._active {
@@ -67,7 +81,44 @@
 
 .main-btn__circle._active,
 .circle._active {
-  animation: circle .6s 2s alternate linear 1 backwards;
+  animation: circle .8s 2s alternate linear 1 backwards;
+}
+
+.card__order-text._active {
+  animation: opacity .8s .6s alternate linear 1 both;
+}
+
+.card__order._active {
+  animation: circle .8s 1.2s alternate linear 1 backwards;
+}
+
+.card__order-text._active:after {
+  animation: arrow-lr .8s 1.5s alternate linear 1 both;
+}
+
+.card__consultation._active {
+  animation: opacity .8s 2.2s alternate linear 1 both;
+}
+
+
+
+@keyframes circle-hov {
+  0% {
+    clip: rect(0 0 0 0);
+  }
+
+  50% {
+    clip: rect(25px 25px 0 0);
+  }
+
+
+  100% {
+    clip: rect(25px 0 0 0);
+  }
+}
+
+.card__order:hover {
+  animation: circle-hov .8s alternate linear infinite;
 }
 
 @keyframes circle {

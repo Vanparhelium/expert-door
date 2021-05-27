@@ -9,6 +9,7 @@
   <title>Двери стандарт</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
   <script defer src="js/main.js"></script>
 </head>
 
@@ -20,30 +21,54 @@
         <img src="img/logo.svg" alt="Логотип" class="header__logo">
         <a href="index.html" class="main__link"></a>
         <div class="header__menu">
-          <ul class="header__menu-items">
-            <li class="header__menu-item">
-              <a href="catalog.html" class="header__menu-link header__menu-link_grey">Каталог</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="service.html" class="header__menu-link header__menu-link_grey">Сервис</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="promo.html" class="header__menu-link header__menu-link_grey">Акции</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="about-manufacturer" class="header__menu-link header__menu-link_grey">О производителе</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="contacts.html" class="header__menu-link header__menu-link_grey">Контакты</a>
-            </li>
-          </ul>
-          <div class="help__btn help__btn-light">
+          <div class="header__menu-items" id="menu">
+            <div class="menu__close">&#10005;</div>
+            <ul class="header__menu-block">
+              <li class="header__menu-item  header__menu-item_first">
+                <a href="catalog.html" class="header__menu-link header__menu-link_grey">Каталог</a>
+              </li>
+              <li class="header__menu-item">
+                <p class="submenu__link header__menu-link_grey">Сервис</p>
+                <ul class="submenu">
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Как выбрать двери</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Доставка и установка</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Порядок оплаты</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="" class="header__menu-link header__menu-link_grey">Гарантии</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__menu-item">
+                <a href="promo.html" class="header__menu-link header__menu-link_grey">Акции</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="about-manufacturer" class="header__menu-link header__menu-link_grey">О производителе</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="contacts.html" class="header__menu-link header__menu-link_grey">Контакты</a>
+              </li>
+            </ul>
+            <div class="main-btn menu__main-btn">
+              <a href="#" class="main-btn__link _anim-items">Помочь выбрать</a>
+              <div class="main-btn__arrow view-btn__arrow _anim-items">
+                <span class="main-btn__circle _anim-items"></span>
+              </div>
+            </div>
+          </div>
+          <div class="help__btn" id="menuBtn">
+            <div class="help__btn-bg help__btn-light _anim-items"></div>
             <a href="#" class="help__link help__link_gray">Помочь выбрать</a>
-            <a href="" class="help__menu help__link_gray">Меню</a>
+            <p class="help__menu menu__btn help__link_gray">Меню</p>
           </div>
         </div>
       </div>
-      <ul class="header__nav section__row">
+      <ul class="header__nav">
         <li class="nav__item">
           <a href="index.html" class="nav__link">Expert</a>
         </li>
@@ -51,10 +76,7 @@
           <a href="catalog.html" class="nav__link">Каталог</a>
         </li>
         <li class="nav__item">
-          <a href="" class="nav__link">Двери в дом</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link nav__link_active">Expert Pro Скандинавский дуб</a>
+          <a href="" class="nav__link nav__link_active">Двери в дом</a>
         </li>
       </ul>
     </div>
@@ -73,12 +95,12 @@
             </div>
             <div class="card__econom">Вы экономите 10 000 &#8381;</div>
             <p class="card__sale personal-data">* Срок действия скидки до 08.05.2020</p>
-            <div class="card__order">
-              <p class="card__order-text">Заказать бесплатный замер</p>
+            <div class="card__order _anim-items">
+              <p class="card__order-text _anim-items">Заказать бесплатный замер</p>
               <a href="" class="card__order-link"></a>
             </div>
-            <div class="card__consultation">
-              <a href="" class="consultation__link_gray block__text">Получить консультацию</a>
+            <div class="card__consultation _anim-items ">
+              <a href="" class="consultation__link_gray block__text _anim-items">Получить консультацию</a>
             </div>
           </div>
           <div class="block__row card-block__row">
@@ -783,6 +805,37 @@
       </div>
     </div>
   </footer>
+
+<script>
+  document.querySelectorAll('.options__item').forEach(function (tabsBtn) {
+  tabsBtn.addEventListener('click', function(event) {
+    const path = event.currentTarget.dataset.path
+    document.querySelectorAll('.options__item').forEach(function(rem) {
+      rem.classList.remove('options__item_active')
+    })
+    tabsBtn.classList.add('options__item_active')
+    document.querySelectorAll('.card__option').forEach(function(tabContent) {
+        tabContent.classList.remove('card__option_active')
+    })
+    document.querySelector(`[data-target="${path}"]`).classList.add('card__option_active')
+  })
+});
+
+
+document.querySelectorAll('.card-option__item').forEach(function (tabsBtn) {
+  tabsBtn.addEventListener('click', function(event) {
+    const path = event.currentTarget.dataset.path
+    document.querySelectorAll('.card-option__item').forEach(function(rem) {
+      rem.classList.remove('card-option__item_active')
+    })
+    tabsBtn.classList.add('card-option__item_active')
+    document.querySelectorAll('.options__table').forEach(function(tabContent) {
+        tabContent.classList.remove('options__table_hidden')
+    })
+    document.querySelector(`[data-target="${path}"]`).classList.add('options__table_hidden')
+  })
+});
+</script>
 </body>
 
 </html>

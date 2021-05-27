@@ -3209,19 +3209,30 @@ a.ui-button:active,
   cursor: pointer;
 }
 
+.card__order:hover .card__order-text {
+  color: #0222A5;
+}
+
+.card__order:hover .card__order-text::after {
+  opacity: 1;
+}
+
+
+
 .card__order-text {
   font-size: 16px;
   line-height: 21px;
   color: #010101;
+  transition: color .6s ease-in-out;
 }
 
 .card__order-text:after {
   position: absolute;
   content: url('../img/Arrow15.svg');
-  width: 100px;
   background: #E5E5E5;
+  text-align: left;
   top: 35%;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .card__order-link {
