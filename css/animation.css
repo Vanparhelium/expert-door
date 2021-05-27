@@ -30,6 +30,12 @@
   }
 }
 
+@keyframes top {
+  100% {
+    margin-top: 0;
+  }
+}
+
 .help__btn-bg._active {
   animation: menu-btn .6s alternate linear 1 both;
 }
@@ -49,6 +55,14 @@
 .main-btn__arrow._active::after,
 .arrow._active::after {
   animation: opacity .6s 1.5s alternate linear 1 both;
+}
+
+.newcomer-btn._active {
+  animation: opacity .6s alternate linear 1 both;
+}
+
+.filter-box__content_down._active {
+  animation: top .8s alternate linear 1 both;
 }
 
 .main-btn__circle._active,

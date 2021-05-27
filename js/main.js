@@ -35,11 +35,6 @@ if (animItems.length > 0) {
   }, 5000);
 }
 
-
-
-
-
-
   document.querySelector('#menuBtn').addEventListener('click', function() {
     document.querySelector('#menu').classList.toggle('header__menu-items_visible');
     document.querySelector('.menu__close').classList.toggle('menu__close_active');
