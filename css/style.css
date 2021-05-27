@@ -257,7 +257,6 @@ body {
   cursor: pointer;
 }
 
-.help__btn:focus .help__btn-bg,
 .help__btn:hover .help__btn-bg {
   left: -65px;
   width: 250px;
@@ -2130,7 +2129,12 @@ a.ui-button:active,
   }
 
   .main-btn {
+    width: 200px;
     margin-right: auto;
+  }
+
+  .menu__main-btn {
+    margin-right: 20px;
   }
 
   .benefits {

@@ -30,7 +30,13 @@ if (animItems.length > 0) {
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, Left: rect.left + scrollLeft }
   }
+  setTimeout(() => {
+    animOnScroll()
+  }, 5000);
 }
+
+
+
 
 $( function() {
   $( "#accordion" ).accordion({

@@ -86,7 +86,7 @@
   }
 }
 
-.header__line:after {
+.header__line._active:after {
   animation: line .7s 2.9s alternate linear 1 both;
 }
 
