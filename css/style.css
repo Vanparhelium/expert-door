@@ -192,6 +192,7 @@ body {
   font-size: 30px;
   color: #C7C7C7;
   visibility: hidden;
+  transition: color .3s ease-in-out;
 }
 
 .submenu__link,
@@ -1246,6 +1247,196 @@ a.ui-button:active,
   width: 50%;
 }
 
+.cookies {
+  visibility: hidden;
+  opacity: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background: #0222A5;
+  transition: all .5s ease-in-out;
+}
+
+.cookies__visibility {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cookies__content {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  padding: 39px 0;
+  text-align: left;
+}
+
+.cookies__content-title {
+  max-width: 280px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FEFEFE;
+}
+
+.cookies__content-text {
+  margin-top: 5px;
+  max-width: 310px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #C7C7C7;
+}
+
+.cookies__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: inherit;
+  border: 1px solid #FEFEFE;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FEFEFE;
+  transition: all .3s ease-in-out;
+}
+
+.cookies__btn:hover {
+  background: #FEFEFE;
+  color: #0222A5;
+}
+
+.cookies__btn:active {
+  background: #F2F2F2;
+}
+
+/* viewed */
+
+.popup__viewed {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  width: 610px;
+  height: 100vh;
+  background: #FAFAFA;
+}
+
+.swiper-container {
+  position: relative;
+  margin-top: 52px;
+  margin-left: 30px;
+  height: 620px;
+}
+
+.swiper-slide {
+  width: 370px;
+}
+
+.view__all {
+  position: relative;
+  width: 370px;
+  height: 487px;
+  margin-right: 100px;
+  background: #0222A5;
+}
+
+.view__all-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #FEFEFE;
+  background: #0222A5;
+  color: #FEFEFE;
+  transition: all .3s ease-in-out;
+}
+
+.view__all-btn:hover {
+  background: #FEFEFE;
+  color: #0222A5;
+}
+
+.view__all-btn:active {
+  background: #F2F2F2;
+  color: #0222A5;
+}
+
+.swiper-button__row {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  height: 60px;
+  bottom: 0;
+  left: 0;
+
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: relative;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #727272;
+  transition: border .3s ease-in-out;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  border: 1px solid #010101;
+}
+
+.swiper-button-prev:active,
+.swiper-button-next:active {
+  border: 1px solid #00197E;
+
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 22px;
+  color: #727272;
+  transition: color .3s ease-in-out;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: #010101;
+}
+
+.swiper-button-prev:active::after,
+.swiper-button-next:active::after {
+  color: #00197E;
+}
+
+.popup__viewed-row {
+  margin-top: 40px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup__viewed-text{
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  color: #010101;
+}
+
+.popup__visibility {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* -----------------------------adptive-index.html----------------------------- */
 @media (max-width: 1599px) {
   .header__title {
@@ -1500,6 +1691,7 @@ a.ui-button:active,
 
 @media (max-width: 800px) {
   .header__menu-items {
+    display: none;
     visibility: hidden;
     opacity: 0;
     position: absolute;
@@ -1521,6 +1713,7 @@ a.ui-button:active,
   }
 
   .header__menu-items_visible {
+    display: flex;
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
@@ -2510,6 +2703,15 @@ a.ui-button:active,
   padding-top: 40px;
   text-align: center;
   background: #F2F2F2;
+  transition: background .5s ease-in-out;
+}
+
+.filter-box__content:hover {
+  background: #E6E6E6;
+}
+
+.filter-box__content:active {
+  background: #C7C7C7;
 }
 
 .box__label {
@@ -2635,9 +2837,22 @@ a.ui-button:active,
 
 .newcomer__close {
   text-align: right;
-  color: #727272;
+  color: #C7C7C7;
   font-size: 20px;
+  transition: color .3s ease-in-out;
 }
+
+.menu__close:hover,
+.newcomer__close:hover {
+  color: #727272;
+}
+
+.menu__close:active,
+.newcomer__close:active {
+  color: #010101;
+}
+
+
 
 .newcomer__title {
   margin-top: 95px;

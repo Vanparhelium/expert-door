@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   <script defer src="js/main.js"></script>
   <script defer src="js/accordion.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animation.css">
@@ -577,6 +579,116 @@
     </div>
   </footer>
 
+<!-- popup viewed -->
+<div class="popup__viewed">
+  <div class="popup__viewed-row">
+    <p class="popup__viewed-text">Ранее вы просматривали:</p>
+    <div class="newcomer__close popup__close">&#10005;</div>
+  </div>
+  <div class="swiper-container popup__swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="filter__box">
+            <div class="filter-box__content">
+              <p class="filter-box__title">Expert pro</p>
+              <span class="filter-box__info">Скандинавский дуб</span>
+              <div class="box__label">-10%</div>
+              <div class="filter-box__img"></div>
+            </div>
+            <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="filter__box">
+          <div class="filter-box__content">
+            <p class="filter-box__title">Expert pro</p>
+            <span class="filter-box__info">Скандинавский дуб</span>
+            <div class="box__label">-10%</div>
+            <div class="filter-box__img"></div>
+          </div>
+          <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="filter__box">
+          <div class="filter-box__content">
+            <p class="filter-box__title">Expert pro</p>
+            <span class="filter-box__info">Скандинавский дуб</span>
+            <div class="box__label">-10%</div>
+            <div class="filter-box__img"></div>
+          </div>
+          <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="filter__box">
+          <div class="filter-box__content">
+            <p class="filter-box__title">Expert pro</p>
+            <span class="filter-box__info">Скандинавский дуб</span>
+            <div class="box__label">-10%</div>
+            <div class="filter-box__img"></div>
+          </div>
+          <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="view__all">
+          <button class="view__all-btn">Смотреть все</button>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button__row">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+
+  var swiper = new Swiper(".popup__swiper", {
+        slidesPerView: "auto",
+        loop: true,
+        centeredSlides: false,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      document.querySelector('.popup__close').addEventListener('click', function () {
+      document.querySelector('.popup__viewed').classList.toggle('popup__visibility');
+    });
+
+      setTimeout(() => {
+      document.querySelector('.popup__viewed').classList.toggle('popup__visibility');
+    }, 10000);
+
+</script>
+
+
+  <!-- popup cookies -->
+<div class="cookies">
+  <div class="container">
+    <div class="cookies__content">
+      <p class="cookies__content-title">Этот сайт использует фалы cookies для улучшения качества обслуживания.</p>
+      <p class="cookies__content-text">Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием данных технологий</p>
+      <button class="cookies__btn">Принять</button>
+    </div>
+  </div>
+</div>
+
+<script>
+    setTimeout(() => {
+      document.querySelector('.cookies').classList.toggle('popup__visibility');
+    }, 10000);
+
+    document.querySelector('.cookies__btn').addEventListener('click', function () {
+    document.querySelector('.cookies').classList.toggle('popup__visibility');
+    });
+</script>
 
 
   <script type="text/javascript">

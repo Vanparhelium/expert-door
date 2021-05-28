@@ -33,7 +33,7 @@ if (animItems.length > 0) {
   setTimeout(() => {
     animOnScroll()
   }, 5000);
-}
+};
 
   document.querySelector('#menuBtn').addEventListener('click', function() {
     document.querySelector('#menu').classList.toggle('header__menu-items_visible');
@@ -49,6 +49,13 @@ if (animItems.length > 0) {
     document.querySelector('.submenu').classList.toggle('submenu__block');
   });
 
+const closeSec = document.querySelectorAll('.newcomer__close')
+if (closeSec.length > 0) {
+  window.addEventListener('click', function () {
+    document.querySelector('.catalog-ofert__section').classList.toggle('done');
+    document.querySelector('.newcomer__section').classList.toggle('done');
+  });
+}
 
 
 
