@@ -2088,10 +2088,10 @@ a.ui-button:active,
     width: 140px;
   }
 
+  .benefits__text-500_long,
   .difference__info {
     min-width: 300px;
   }
-
 
   .block__text {
     width: 100%;
