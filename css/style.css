@@ -2088,6 +2088,11 @@ a.ui-button:active,
     width: 140px;
   }
 
+  .difference__info {
+    min-width: 300px;
+  }
+
+
   .block__text {
     width: 100%;
   }
