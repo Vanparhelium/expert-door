@@ -2327,8 +2327,15 @@ a.ui-button:active,
   }
 }
 
+@media (max-width: 420px) {
+  .menu__main-btn {
+    margin-right: 0;
+  }
 
-
+  .main-btn__arrow {
+    width: 100%;
+  }
+}
 
 /* -----------------------------catalog.html-style---------------------------- */
 .caralog__main {
@@ -2942,6 +2949,10 @@ a.ui-button:active,
     --gutter: 20px;
   }
 
+  .newcomer__bullet {
+    right: 60%;
+  }
+
   .filter-box__img,
   .filter-box__img-2,
   .filter-box__img-1 {
@@ -3204,9 +3215,19 @@ a.ui-button:active,
   display: flex;
   align-items: center;
   text-align: center;
+
+  cursor: pointer;
+}
+
+.card__order:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border: 1px solid #0222A5;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 .card__order:hover .card__order-text {
@@ -3216,8 +3237,6 @@ a.ui-button:active,
 .card__order:hover .card__order-text::after {
   opacity: 1;
 }
-
-
 
 .card__order-text {
   font-size: 16px;
@@ -3247,6 +3266,16 @@ a.ui-button:active,
   padding: 10px 0;
   border-top: 1px solid #C7C7C7;
   border-bottom: 1px solid #C7C7C7;
+  cursor: pointer;
+  transition: border-color .6s ease-in-out;
+}
+
+.card__consultation:hover {
+  border-color: #0222A5;
+}
+
+.card__consultation:active {
+  border-color: #010101;
 }
 
 .consultation__link_gray {
@@ -3389,6 +3418,14 @@ a.ui-button:active,
   color: #010101;
   border-bottom: 1px solid #010101;
   border-right: 1px solid #010101;
+  transition-property: color, background;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.options__item:hover {
+  color: #727272;
 }
 
 .options__item_active {
@@ -3412,6 +3449,12 @@ a.ui-button:active,
   border-bottom: 1px solid #E6E6E6;
   padding: 0 20px 10px;
   color: #727272;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
+.card-option__item:hover {
+  color: #010101;
 }
 
 .card-option__item:last-child {
@@ -3708,6 +3751,21 @@ a.ui-button:active,
 
 .add-options__card {
   margin-top: 50px;
+  overflow: hidden;
+}
+
+.add-options__card:hover .add-options__card-img {
+  width: 220px;
+  height: 220px;
+}
+
+.add-options__card:hover .add-options__card-label {
+  bottom: 10px;
+  left: 10px;
+}
+
+.add-options__card:active .add-options__card-label {
+  background: url('../img/arrow5.png') center center no-repeat, #010101;
 }
 
 .add-options__card-img {
@@ -3715,6 +3773,7 @@ a.ui-button:active,
   width: 200px;
   height: 200px;
   margin-top: 10px;
+  transition: all 0.5s ease-in-out;
 }
 
 .add-options__card-label {
@@ -3724,6 +3783,7 @@ a.ui-button:active,
   width: 40px;
   height: 40px;
   background: url('../img/arrow5.png') center center no-repeat, #0222A5;
+  transition: all 0.3s ease-in-out;
 }
 
 .add-options__card-img-1 {
@@ -3888,6 +3948,17 @@ a.ui-button:active,
     width: 150px;
     height: 157px;
   }
+
+  .add-options__card:hover .add-options__card-img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .add-options__card:hover .add-options__card-label {
+    bottom: 0;
+    left: 0;
+  }
+
 
   .add-options__col {
     width: 440px;
