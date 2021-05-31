@@ -19,7 +19,7 @@ if (animItems.length > 0) {
         animItem.classList.add('_active');
       } else {
         if (!animItem.classList.contains('_anim-no-hide')) {
-          animItem.classList.remove('._active');
+          animItem.classList.remove('_active');
         }
       }
     }
@@ -59,6 +59,32 @@ if (closeSec.length > 0) {
 
 
 
+const modal = document.querySelector('#popup-help');
+const modalBtn = document.querySelector('#help-popup__btn');
+const modalBtn2 = document.querySelector('#popup-help__btn');
+const closeBtn = document.querySelector('.popup-help__close');
+
+modalBtn.addEventListener('click', openModal);
+modalBtn2.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+  modal.style.display = 'none';
+  }
+}
 
 
 

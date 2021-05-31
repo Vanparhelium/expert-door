@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/accordion.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -35,7 +35,7 @@
     <div class="video-container header__hidden" id="header">
       <div class="fillter"></div>
       <video autoplay loop muted playsinline src="video-bg/Video_1.mp4" class="fillWidth"></video>
-      </div>
+    </div>
     <div class="container container__header">
       <div class="header__top-row _anim-items">
         <img src="img/logo.svg" alt="Логотип" class="header__logo">
@@ -74,8 +74,8 @@
                 <a href="contacts.html" class="header__menu-link">Контакты</a>
               </li>
             </ul>
-            <div class="main-btn menu__main-btn">
-              <a href="#" class="main-btn__link _anim-items">Помочь выбрать</a>
+            <div class="main-btn menu__main-btn" id="popup-help__btn">
+              <p class="main-btn__link _anim-items">Помочь выбрать</p>
               <div class="main-btn__arrow view-btn__arrow _anim-items">
                 <span class="main-btn__circle _anim-items"></span>
               </div>
@@ -83,11 +83,76 @@
           </div>
           <div class="help__btn" id="menuBtn">
             <div class="help__btn-bg _anim-items"></div>
-            <a href="#" class="help__link">Помочь выбрать</a>
+            <buttom class="help__link" id="help-popup__btn">Помочь выбрать</buttom>
             <p class="help__menu menu__btn">Меню</p>
           </div>
         </div>
-
+        <div class="popup__help" id="popup-help">
+          <div class="popup-help__content">
+            <div class="popup-help__close">&#10005;</div>
+            <div class="popup-help__step1">
+              <div class="popup-help-step__content">
+                <div class="step__content-title">Вам необходимы двери:</div>
+                <div class="step__content-row">
+                  <input type="button" value="В квартиру" class="step__content-btn step__content-btn_active">
+                  <input type="button" value="В дом" class="step__content-btn">
+                </div>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step1"></div>
+              </div>
+            </div>
+            <div class="popup-help__step2">
+              <div class="popup-help-step__content">
+                <div class="step__content-title">Ваш бюджет:</div>
+                <ul>
+                  <li class="budget-item">30 000 ₽ — 50 000 ₽</li>
+                  <li class="budget-item">50 000 ₽ — 70 000 ₽</li>
+                  <li class="budget-item">70 000 ₽ — 90 000 ₽</li>
+                  <li class="budget-item">90 000 ₽ — больше</li>
+                </ul>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step2"></div>
+              </div>
+            </div>
+            <div class="popup-help__step3">
+              <div class="popup-help-step__content">
+                <div class="step__content-title step3__content-title">Наш менеджер перезвонит вам в течение короткого времени, подберет лучший вариант и ответит на любые вопросы </div>
+                <div class="step__content-row step3__content-row">
+                  <div class="step__content-phone">
+                    <div class="callback__tel callback__tel-popup">Телефон
+                      <input type="tel" name="phone" id="#">
+                      <span class="callback__tel-line"></span>
+                    </div>
+                    <p class="personal-data popup__personal-data">
+                      Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
+                      <a href="#">персональных данных</a>
+                    </p>
+                  </div>
+                  <div class="callback__col">
+                    <button class="callback__btn callback__btn-popup">Отправить</button>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step3"></div>
+              </div>
+            </div>
+            <div class="popup-help__step4 popup-help__step_active">
+              <div class="popup-help-step__content">
+                <h6 class="step__content-title step4__content-title">Спасибо за обращение!</h6>
+                <div class="step__content-text">
+                  Мы получили вашу заявку и перезвоним в близжайшее время
+                </div>
+                <div class="popup__ok"></div>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="header__title">Expert</div>
       <div class="consultation main-btn">
@@ -155,44 +220,112 @@
             <span class="bottom__line"></span>
           </li>
         </ul>
-        <div class="block__row block__view">
-          <div class="section__col-2">
-            <div class="block__row block__row-direction">
-              <div class="component _anim-items">
-              </div>
-              <div class="special-offer__card_small">
-                <div class="special-offer__box_small catalog__box-small">
-                  <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+        <div class="block__view swiper-container">
+          <div class="component block__view-component  _anim-items">
+          </div>
+          <div class="swiper-wrapper">
+            <div class="block__view-slide swiper-slide">
+              <div class="block__row ">
+                <div class="section__col-2">
+                  <div class="block__row block__row-direction">
+                    <div class="component-box"></div>
+                    <div class="special-offer__card_small">
+                      <div class="special-offer__box_small catalog__box-small">
+                        <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+                      </div>
+                      <div class="sale sale_right">35 000 &#8381;</div>
+                    </div>
+                  </div>
+                  <div class="block__row card__hidden">
+                    <div class="special-offer__card">
+                      <div class="sale">26 800 &#8381;</div>
+                      <div class="special-offer__box">
+                        <img src="img/door354.png" alt="дверь">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="sale sale_right">35 000 &#8381;</div>
+                <div class="section__col">
+                  <div class="special-offer__box_big">
+                    <img src="img/door44.png" alt="дверь на" class="box-big__img">
+                  </div>
+                  <div class="sale">44 000 &#8381;</div>
+                </div>
               </div>
             </div>
-            <div class="block__row card__hidden">
-              <div class="special-offer__card">
-                <div class="sale">26 800 &#8381;</div>
-                <div class="special-offer__box">
-                  <img src="img/door354.png" alt="дверь">
+            <div class="block__view-slide swiper-slide">
+              <div class="block__row ">
+                <div class="section__col-2">
+                  <div class="block__row block__row-direction">
+                    <div class="component-box"></div>
+                    <div class="special-offer__card_small">
+                      <div class="special-offer__box_small catalog__box-small">
+                        <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+                      </div>
+                      <div class="sale sale_right">35 000 &#8381;</div>
+                    </div>
+                  </div>
+                  <div class="block__row card__hidden">
+                    <div class="special-offer__card">
+                      <div class="sale">26 800 &#8381;</div>
+                      <div class="special-offer__box">
+                        <img src="img/door354.png" alt="дверь">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__col">
+                  <div class="special-offer__box_big">
+                    <img src="img/door44.png" alt="дверь на" class="box-big__img">
+                  </div>
+                  <div class="sale">44 000 &#8381;</div>
+                </div>
+              </div>
+            </div>
+            <div class="block__view-slide swiper-slide">
+              <div class="block__row ">
+                <div class="section__col-2">
+                  <div class="block__row block__row-direction">
+                    <div class="component-box"></div>
+                    <div class="special-offer__card_small">
+                      <div class="special-offer__box_small catalog__box-small">
+                        <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+                      </div>
+                      <div class="sale sale_right">35 000 &#8381;</div>
+                    </div>
+                  </div>
+                  <div class="block__row card__hidden">
+                    <div class="special-offer__card">
+                      <div class="sale">26 800 &#8381;</div>
+                      <div class="special-offer__box">
+                        <img src="img/door354.png" alt="дверь">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__col">
+                  <div class="special-offer__box_big">
+                    <img src="img/door44.png" alt="дверь на" class="box-big__img">
+                  </div>
+                  <div class="sale">44 000 &#8381;</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="section__col">
-            <div class="special-offer__box_big">
-              <img src="img/door44.png" alt="дверь на" class="box-big__img">
+          <div class="block__row block__row-pages">
+            <div class="main-btn catlog__main-btn">
+              <a href="#" class="main-btn__link _anim-items">Перейти в каталог</a>
+              <div class="main-btn__arrow view-btn__arrow _anim-items">
+                <span class="main-btn__circle _anim-items"></span>
+              </div>
             </div>
-            <div class="sale">44 000 &#8381;</div>
-          </div>
-        </div>
-        <div class="block__row block__row-pages">
-          <div class="main-btn catlog__main-btn">
-            <a href="#" class="main-btn__link _anim-items">Перейти в каталог</a>
-            <div class="main-btn__arrow view-btn__arrow _anim-items">
-              <span class="main-btn__circle _anim-items"></span>
+            <div class="pages">
+              <span class="pages-pagination-current"></span>
+              <span class="pages__line"></span>
+              <span class="pages-pagination-total"></span>
             </div>
           </div>
-          <div class="pages">
-            1 <span class="pages__line"></span> 2
-          </div>
+
         </div>
       </section>
       <section class="benefits">
@@ -280,7 +413,7 @@
             </div>
             <p>Двери китайского производства значительно дешевле по стоимости конструкциям, изготовленным в России. Но
               так же, как и цена, качество китайских дверей значительно ниже.</p>
-              <span class="bottom__line"></span>
+            <span class="bottom__line"></span>
           </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
@@ -291,7 +424,7 @@
               тяжелые, их вес всегда превышает 50 кг. Толщина металла – не менее 1.5 мм.
               Двери от КНР довольно легкие и тонкие. Их вес часто не превышает 20-30 кг, а толщина металлического листа
               едва дотягивает до 0.5 мм. При нажатии полотно прогибается и пружинится.</p>
-              <span class="bottom__line"></span>
+            <span class="bottom__line"></span>
           </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
@@ -301,8 +434,8 @@
             <p>Китайские производители выпускают двери стандартных размеров. У отечественного производителя можно
               приобрести конструкцию любых размеров для установки в дома и квартиры с разными параметрами дверного
               проема.</p>
-              <span class="bottom__line"></span>
-            </li>
+            <span class="bottom__line"></span>
+          </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
               <p class="section__text">Надежность запорных устройств</p>
@@ -321,7 +454,7 @@
             <p>Фурнитура китайских дверей быстро приходит в негодность и теряет привлекательный вид.
               Российские производители не экономят на столь важных элементах оснащения и комплектуют металлические двери
               качественной фурнитурой с длительной и функциональной работоспособностью.</p>
-              <span class="bottom__line"></span>
+            <span class="bottom__line"></span>
           </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
@@ -335,7 +468,7 @@
               гофрокартон, уложенный недостаточно плотно. Все недостатки этого материала можно заметно ощутить в
               холодный сезон года. Дверь не защищает от сквозняков и морозов, пропускает холодный воздух в дом и
               посторонний шум с улицы.</p>
-              <span class="bottom__line"></span>
+            <span class="bottom__line"></span>
           </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
@@ -350,7 +483,7 @@
               устойчивостью к различным воздействиям. Они создают готовому изделию презентабельный внешний вид.
               Покупатель может выбрать красивое полотно с декоративными элементами из хромированного металла, стекла,
               зеркальной поверхности или резьбой на деревянной основе. Выбор дизайнерских решений очень большой!</p>
-              <span class="bottom__line"></span>
+            <span class="bottom__line"></span>
           </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
@@ -364,7 +497,7 @@
               эксплуатационных качеств. Многие граждане меняют такие двери на новые конструкции, только чтобы сменить
               уже поднадоевший дизайн, а старые двери, не утратившие вид и свои защитные качества, переустанавливают в
               другие помещения.</p>
-              <span class="bottom__line"></span>
+            <span class="bottom__line"></span>
           </li>
           <li class="accordion__item">
             <div class="accordion__item_line">
@@ -420,7 +553,7 @@
             </div>
           </div>
           <div class="section__col-main section__col_max">
-            <div class="safety-block__img"></div>
+            <div class="safety-block__img1"></div>
             <p class="benefits__text block__text-400">Штыревой антисрез — это дополнительная система защиты двери,
               которая не позволяет вскрыть дверь со стороны петель если злоумышленник их срежет.</p>
             <p class="block__text block__text-385">При закрытой двери — штырь входит в отверстие в лутке и, если петли
@@ -448,7 +581,9 @@
         <div class="block__row safety-block__row">
           <div class="section__col-2 section__col_max">
             <h6 class="safety__section-title safety__section-title_right ">Система антивор</h6>
-            <div class="safety-block__img-500"></div>
+            <div class="safety-block__img-500-box">
+              <div class="safety-block__img-500"></div>
+            </div>
           </div>
           <div class="section__col-main section__col_max">
             <h6 class="safety__section-title safety__section-title_left">Система антивор</h6>
@@ -467,7 +602,7 @@
             </div>
           </div>
         </div>
-        <div class="block__row safety-block__row">
+        <div class="block__row safety-block__row safety-block__row_bottom">
           <div class="section__col-2 safety-section__col-2">
             <h6 class="safety__section-title block__text-420">Дополнительная защита примыкания</h6>
             <div class="main-btn-benefits main-btn-safety main-btn__hidden">
@@ -478,17 +613,23 @@
             </div>
           </div>
           <div class="section__col-main section__col_max">
-            <div class="safety-block__img safety-block__img-bg"></div>
+            <div class="safety-block__img-box">
+              <div class="safety-block__img safety-block__img-bg"></div>
+            </div>
             <p class="benefits__text block__text-400">Дополнительная защита примыкания — дополнительная опция
               безопасности входной двери.</p>
+              <!-- <p class="block__text block__text-more ">Подробнее
+                <span class="accordion__arrow accordion__arrow-more"></span>
+              </p> -->
             <p class="block__text benefits__text-500">Со стороны притвора двери наваривается «квадрат», который не
               позволит злоумышленнику заложить лом или фомку между луткой и дверью, чтобы отогнуть ее. На фото этот
               «квадрат» обозначен красным цветом. Также существуют вариации с защитой по всему периметру двери с
-              использованием полосы. </p>
-            <p class="block__text benefits__text-500">
+              использованием полосы. <br>
+              <br>
               При установке двери полоса прячется под наличник, визуально не обнаруживается и не портит вид двери. Тихо
-              подобраться к замку с такой дополнительной защитой попросту не удастся.</p>
-            <p class="block__text benefits__text-500">
+              подобраться к замку с такой дополнительной защитой попросту не удастся.
+              <br>
+              <br>
               Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой
               входной двери, заказанной у нас — по Вашему желанию.</p>
           </div>
@@ -496,23 +637,170 @@
       </section>
       <section class="reviews__section">
         <h2 class="section__name">Отзывы о нас</h2>
-        <div class="block__row block__row-direction">
-          <div class="section__col-2">
-            <div class="safety-block__img-500 reviews__img"></div>
-          </div>
-          <div class="section__col-main reviews__col">
-            <div class="reviews__row block__row-reviews">
-              <h3 class="benefits__title">Алексей</h3>
-              <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
-                "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
-                ожидал.</p>
-            </div>
-            <div class="block__row">
-              <div class="pages reviews-pages">
-                1 <span class="pages__line"></span> 12
+        <div class="reviews-swiper swiper-container">
+          <div class="swiper-wrapper">
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
               </div>
-              <div class="component reviews-component"></div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
             </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
+                </div>
+              </div>
+            </div>
+            <div class="block__row block__row-direction block-rewiews__slide swiper-slide">
+              <div class="section__col-2">
+                <div class="reviews__img"></div>
+              </div>
+              <div class="section__col-main reviews__col">
+                <div class="reviews__row block__row-reviews">
+                  <h3 class="benefits__title">Алексей</h3>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не ожидал.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block__row rewiews__slide-nav">
+            <div class="pages reviews-pages">
+              <span class="pages-current"></span>
+              <span class="pages__reviews-line"></span>
+              <span class="pages-total"></span>
+            </div>
+            <div class="component reviews-component _anim-items"></div>
           </div>
         </div>
       </section>
@@ -524,7 +812,7 @@
               <p class="block__text callback__text">Поможем выбрать дверь и ответим на любые вопросы</p>
 
               <div class="callback__tel">Телефон
-                <input type="tel" name="phone" id="#">
+                <input type="tel" name="phone" >
                 <span class="callback__tel-line _anim-items"></span>
               </div>
               <p class="personal-data">
@@ -579,141 +867,194 @@
     </div>
   </footer>
 
-<!-- popup viewed -->
-<div class="popup__viewed">
-  <div class="popup__viewed-row">
-    <p class="popup__viewed-text">Ранее вы просматривали:</p>
-    <div class="newcomer__close popup__close">&#10005;</div>
-  </div>
-  <div class="swiper-container popup__swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-          <div class="filter__box">
-            <div class="filter-box__content">
+
+
+  <!-- popup viewed -->
+  <div class="popup__viewed">
+    <div class="popup__viewed-row">
+      <p class="popup__viewed-text">Ранее вы просматривали:</p>
+      <div class="popup__close">&#10005;</div>
+    </div>
+    <div class="swiper-container popup__swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="filter__box popup-view__box">
+            <div class="filter-box__content popup-view__box">
               <p class="filter-box__title">Expert pro</p>
               <span class="filter-box__info">Скандинавский дуб</span>
               <div class="box__label">-10%</div>
-              <div class="filter-box__img"></div>
+              <div class="filter-box__img popup-view__img"></div>
             </div>
             <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
           </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="filter__box">
-          <div class="filter-box__content">
-            <p class="filter-box__title">Expert pro</p>
-            <span class="filter-box__info">Скандинавский дуб</span>
-            <div class="box__label">-10%</div>
-            <div class="filter-box__img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="filter__box popup-view__box">
+            <div class="filter-box__content popup-view__box">
+              <p class="filter-box__title">Expert pro</p>
+              <span class="filter-box__info">Скандинавский дуб</span>
+              <div class="box__label">-10%</div>
+              <div class="filter-box__img popup-view__img"></div>
+            </div>
+            <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
           </div>
-          <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="filter__box">
-          <div class="filter-box__content">
-            <p class="filter-box__title">Expert pro</p>
-            <span class="filter-box__info">Скандинавский дуб</span>
-            <div class="box__label">-10%</div>
-            <div class="filter-box__img"></div>
+        <div class="swiper-slide">
+          <div class="filter__box popup-view__box">
+            <div class="filter-box__content popup-view__box">
+              <p class="filter-box__title">Expert pro</p>
+              <span class="filter-box__info">Скандинавский дуб</span>
+              <div class="box__label">-10%</div>
+              <div class="filter-box__img popup-view__img"></div>
+            </div>
+            <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
           </div>
-          <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
         </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="filter__box">
-          <div class="filter-box__content">
-            <p class="filter-box__title">Expert pro</p>
-            <span class="filter-box__info">Скандинавский дуб</span>
-            <div class="box__label">-10%</div>
-            <div class="filter-box__img"></div>
+        <div class="swiper-slide">
+          <div class="filter__box popup-view__box">
+            <div class="filter-box__content popup-view__box">
+              <p class="filter-box__title">Expert pro</p>
+              <span class="filter-box__info">Скандинавский дуб</span>
+              <div class="box__label">-10%</div>
+              <div class="filter-box__img popup-view__img"></div>
+            </div>
+            <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
           </div>
-          <div class="filter__sale sale_right"><span class="old__sale">56 000 &#8381;</span>46 000 &#8381;</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="view__all popup-view__box">
+            <button class="view__all-btn">Смотреть все</button>
+          </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="view__all">
-          <button class="view__all-btn">Смотреть все</button>
-        </div>
+      <div class="swiper-button__row">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-    </div>
-    <div class="swiper-button__row">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
   </div>
-</div>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
 
-  var swiper = new Swiper(".popup__swiper", {
-        slidesPerView: "auto",
-        loop: true,
-        centeredSlides: false,
-        spaceBetween: 30,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+  <script>
 
-      document.querySelector('.popup__close').addEventListener('click', function () {
+    var swiper = new Swiper(".popup__swiper", {
+      slidesPerView: "auto",
+      loop: true,
+      centeredSlides: false,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    document.querySelector('.popup__close').addEventListener('click', function () {
       document.querySelector('.popup__viewed').classList.toggle('popup__visibility');
     });
 
-      setTimeout(() => {
+    setTimeout(() => {
       document.querySelector('.popup__viewed').classList.toggle('popup__visibility');
     }, 10000);
 
-</script>
+  </script>
+
+  <script>
+    var swiper = new Swiper(".block__view", {
+      slidesPerView: 1,
+      loop: true,
+      normalizeSlideIndex: true,
+      centeredSlides: false,
+      pagination: {
+        el: ".pages",
+        type: "fraction",
+        currentClass: '.pages-pagination-current',
+        totalClass: '.pages-pagination-total',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + '.pages-pagination-current' + '"></span>' +
+            ' <span class="pages__line"></span> ' +
+            '<span class="' + '.pages-pagination-total' + '"></span>';
+        },
+      },
+      scrollbar: {
+        el: ".pages__line",
+      },
+      navigation: {
+        nextEl: '.block__view-component',
+      },
+    });
+  </script>
+
+  <script>
+    var swiper = new Swiper(".reviews-swiper", {
+      slidesPerView: 1,
+      loop: true,
+      normalizeSlideIndex: true,
+      centeredSlides: false,
+      pagination: {
+        el: ".reviews-pages",
+        type: "fraction",
+        currentClass: 'pages-current',
+        totalClass: 'pages-total',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + 'pages-current' + '"></span>' +
+            ' <span class="pages__reviews-line"></span> ' +
+            '<span class="' + 'pages-total' + '"></span>';
+        },
+      },
+      scrollbar: {
+        el: ".pages__reviews-line",
+      },
+      navigation: {
+        nextEl: '.reviews-component',
+      },
+    });
+  </script>
 
 
   <!-- popup cookies -->
-<div class="cookies">
-  <div class="container">
-    <div class="cookies__content">
-      <p class="cookies__content-title">Этот сайт использует фалы cookies для улучшения качества обслуживания.</p>
-      <p class="cookies__content-text">Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием данных технологий</p>
-      <button class="cookies__btn">Принять</button>
+  <div class="cookies">
+    <div class="container">
+      <div class="cookies__content">
+        <p class="cookies__content-title">Этот сайт использует фалы cookies для улучшения качества обслуживания.</p>
+        <p class="cookies__content-text">Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием
+          данных технологий</p>
+        <button class="cookies__btn">Принять</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
+  <script>
     setTimeout(() => {
       document.querySelector('.cookies').classList.toggle('popup__visibility');
     }, 10000);
 
     document.querySelector('.cookies__btn').addEventListener('click', function () {
-    document.querySelector('.cookies').classList.toggle('popup__visibility');
+      document.querySelector('.cookies').classList.toggle('popup__visibility');
     });
-</script>
+  </script>
 
 
   <script type="text/javascript">
 
-document.body.onload = function () {
+    document.body.onload = function () {
 
-setTimeout(() => {
-  var preloader = document.querySelector('#page-preloader');
+      setTimeout(() => {
+        var preloader = document.querySelector('#page-preloader');
 
-  if( !preloader.classList.contains('done'))
-  {
-    preloader.classList.add('done');
-  }
-  var header = document.querySelector('#header');
-  if( !header.classList.contains('header__visible'))
-  {
-    header.classList.add('header__visible');
-  }
-}, 4900);
-};
+        if (!preloader.classList.contains('done')) {
+          preloader.classList.add('done');
+        }
+        var header = document.querySelector('#header');
+        if (!header.classList.contains('header__visible')) {
+          header.classList.add('header__visible');
+        }
+      }, 4900);
+    };
 
-document.querySelector('.block__text-more').addEventListener('click', function() {
-  document.querySelector('.block__more').classList.toggle('block__more_active');
-  document.querySelector('.accordion__arrow-more').classList.toggle('accordion__arrow-more_active');
-});
+    document.querySelector('.block__text-more').addEventListener('click', function () {
+      document.querySelector('.block__more').classList.toggle('block__more_active');
+      document.querySelector('.accordion__arrow-more').classList.toggle('accordion__arrow-more_active');
+    });
   </script>
 
 
