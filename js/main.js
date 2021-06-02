@@ -58,6 +58,7 @@ const modalBtn = document.querySelector('#help-popup__btn');
 const modalBtn2 = document.querySelector('#popup-help__btn');
 const closeBtn = document.querySelector('.popup-help__close');
 
+
 modalBtn.addEventListener('click', openModal);
 modalBtn2.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
@@ -66,6 +67,10 @@ window.addEventListener('click', outsideClick);
 // Open
 function openModal() {
   modal.style.display = 'block';
+  document.querySelectorAll('.popup-help__step').forEach(function (remActive) {
+    remActive.classList.remove('popup-help__step_active');
+  });
+  document.querySelector('.popup-help__step1').classList.add('popup-help__step_active');
 }
 
 // Close
@@ -112,10 +117,34 @@ document.querySelector('.callback__btn-popup').addEventListener('click', functio
     setTimeout(() => {
       closeModal();
       document.querySelector('.popup-help__step4').classList.remove('popup-help__step_active');
-      document.querySelector('.popup-help__step1').classList.add('popup-help__step_active');
     }, 5000);
-})
+});
 
+const modalBtns3 = document.querySelectorAll('.main-btn-benefits');
+if (modalBtns3.length > 0) {
+  for (let index = 0; index < modalBtns3.length; index++) {
+    const modalBtn3 = modalBtns3[index];
+    modalBtn3.addEventListener('click', function () {
+      modal.style.display = 'block';
+      document.querySelectorAll('.popup-help__step').forEach(function (remActive) {
+          remActive.classList.remove('popup-help__step_active');
+      });
+      document.querySelector('.popup-help__step3').classList.add('popup-help__step_active');
+    });
+  };
+};
 
-
+const modalBtns4 = document.querySelectorAll('.consultation');
+if (modalBtns4.length > 0) {
+  for (let index = 0; index < modalBtns4.length; index++) {
+    const modalBtn4 = modalBtns4[index];
+    modalBtn4.addEventListener('click', function () {
+      modal.style.display = 'block';
+      document.querySelectorAll('.popup-help__step').forEach(function (remActive) {
+          remActive.classList.remove('popup-help__step_active');
+      });
+      document.querySelector('.popup-help__step3').classList.add('popup-help__step_active');
+    });
+  };
+};
 
