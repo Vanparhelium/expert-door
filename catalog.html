@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Каталог</title>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script defer src="js/main.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animation.css">
@@ -53,8 +55,8 @@
                 <a href="contacts.html" class="header__menu-link header__menu-link_grey">Контакты</a>
               </li>
             </ul>
-            <div class="main-btn menu__main-btn">
-              <a href="#" class="main-btn__link _anim-items">Помочь выбрать</a>
+            <div class="main-btn menu__main-btn" id="popup-help__btn">
+              <p class="main-btn__link _anim-items">Помочь выбрать</p>
               <div class="main-btn__arrow view-btn__arrow _anim-items">
                 <span class="main-btn__circle _anim-items"></span>
               </div>
@@ -62,8 +64,74 @@
           </div>
           <div class="help__btn" id="menuBtn">
             <div class="help__btn-bg help__btn-light _anim-items"></div>
-            <a href="#" class="help__link help__link_gray">Помочь выбрать</a>
+            <buttom class="help__link help__link_gray" id="help-popup__btn">Помочь выбрать</buttom>
             <p class="help__menu menu__btn help__link_gray">Меню</p>
+          </div>
+        </div>
+        <div class="popup__help" id="popup-help">
+          <div class="popup-help__content">
+            <div class="popup-help__close">&#10005;</div>
+            <div class="popup-help__step1 popup-help__step_active">
+              <div class="popup-help-step__content">
+                <div class="step__content-title">Вам необходимы двери:</div>
+                <div class="step__content-row">
+                  <input type="button" value="В квартиру" class="step__content-btn step__content-btn_active">
+                  <input type="button" value="В дом" class="step__content-btn">
+                </div>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step1"></div>
+              </div>
+            </div>
+            <div class="popup-help__step2">
+              <div class="popup-help-step__content">
+                <div class="step__content-title">Ваш бюджет:</div>
+                <ul>
+                  <li class="budget-item">30 000 ₽ — 50 000 ₽</li>
+                  <li class="budget-item">50 000 ₽ — 70 000 ₽</li>
+                  <li class="budget-item">70 000 ₽ — 90 000 ₽</li>
+                  <li class="budget-item">90 000 ₽ — больше</li>
+                </ul>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step2"></div>
+              </div>
+            </div>
+            <div class="popup-help__step3">
+              <div class="popup-help-step__content">
+                <div class="step__content-title step3__content-title">Наш менеджер перезвонит вам в течение короткого времени, подберет лучший вариант и ответит на любые вопросы </div>
+                <div class="step__content-row step3__content-row">
+                  <div class="step__content-phone">
+                    <div class="callback__tel callback__tel-popup">Телефон
+                      <input type="tel" name="phone" id="#">
+                      <span class="callback__tel-line"></span>
+                    </div>
+                    <p class="personal-data popup__personal-data">
+                      Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
+                      <a href="#">персональных данных</a>
+                    </p>
+                  </div>
+                  <div class="callback__col">
+                    <button class="callback__btn callback__btn-popup">Отправить</button>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step3"></div>
+              </div>
+            </div>
+            <div class="popup-help__step4">
+              <div class="popup-help-step__content">
+                <h6 class="step__content-title step4__content-title">Спасибо за обращение!</h6>
+                <div class="step__content-text">
+                  Мы получили вашу заявку и перезвоним в близжайшее время
+                </div>
+                <div class="popup__ok"></div>
+              </div>
+              <div class="popup-help__line">
+                <div class="help-line help-line__step4"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -278,7 +346,7 @@
       <div class="container catalog__special-offer">
         <div class="block__row">
           <h2 class="section__name">Уникальное предложение</h2>
-          <div class="newcomer__close">&#10005;</div>
+          <div class="newcomer__close newcomer__close1">&#10005;</div>
         </div>
         <div class="block__row block__row_line">
           <div class="section__col">
@@ -334,43 +402,110 @@
             </ul>
           </div>
         </div>
-        <div class="block__row block__view">
-          <div class="section__col-2">
-            <div class="block__row block__row-direction">
-              <div class="component _anim-items">
-              </div>
-              <div class="special-offer__card_small">
-                <div class="special-offer__box_small catalog__box-small">
-                  <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+        <div class="block__view swiper-container">
+          <div class="component block__view-component  _anim-items">
+          </div>
+          <div class="swiper-wrapper">
+            <div class="block__view-slide swiper-slide">
+              <div class="block__row ">
+                <div class="section__col-2">
+                  <div class="block__row block__row-direction">
+                    <div class="component-box"></div>
+                    <div class="special-offer__card_small">
+                      <div class="special-offer__box_small catalog__box-small">
+                        <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+                      </div>
+                      <div class="sale sale_right">35 000 &#8381;</div>
+                    </div>
+                  </div>
+                  <div class="block__row card__hidden">
+                    <div class="special-offer__card">
+                      <div class="sale">26 800 &#8381;</div>
+                      <div class="special-offer__box">
+                        <img src="img/door354.png" alt="дверь">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="sale sale_right">35 000 &#8381;</div>
+                <div class="section__col">
+                  <div class="special-offer__box_big">
+                    <img src="img/door44.png" alt="дверь на" class="box-big__img">
+                  </div>
+                  <div class="sale">44 000 &#8381;</div>
+                </div>
               </div>
             </div>
-            <div class="block__row card__hidden">
-              <div class="special-offer__card">
-                <div class="sale">26 800 &#8381;</div>
-                <div class="special-offer__box">
-                  <img src="img/door354.png" alt="дверь">
+            <div class="block__view-slide swiper-slide">
+              <div class="block__row ">
+                <div class="section__col-2">
+                  <div class="block__row block__row-direction">
+                    <div class="component-box"></div>
+                    <div class="special-offer__card_small">
+                      <div class="special-offer__box_small catalog__box-small">
+                        <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+                      </div>
+                      <div class="sale sale_right">35 000 &#8381;</div>
+                    </div>
+                  </div>
+                  <div class="block__row card__hidden">
+                    <div class="special-offer__card">
+                      <div class="sale">26 800 &#8381;</div>
+                      <div class="special-offer__box">
+                        <img src="img/door354.png" alt="дверь">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__col">
+                  <div class="special-offer__box_big">
+                    <img src="img/door44.png" alt="дверь на" class="box-big__img">
+                  </div>
+                  <div class="sale">44 000 &#8381;</div>
+                </div>
+              </div>
+            </div>
+            <div class="block__view-slide swiper-slide">
+              <div class="block__row ">
+                <div class="section__col-2">
+                  <div class="block__row block__row-direction">
+                    <div class="component-box"></div>
+                    <div class="special-offer__card_small">
+                      <div class="special-offer__box_small catalog__box-small">
+                        <img src="img/door355.png" alt="дверь на" class="special-offer__box-img">
+                      </div>
+                      <div class="sale sale_right">35 000 &#8381;</div>
+                    </div>
+                  </div>
+                  <div class="block__row card__hidden">
+                    <div class="special-offer__card">
+                      <div class="sale">26 800 &#8381;</div>
+                      <div class="special-offer__box">
+                        <img src="img/door354.png" alt="дверь">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section__col">
+                  <div class="special-offer__box_big">
+                    <img src="img/door44.png" alt="дверь на" class="box-big__img">
+                  </div>
+                  <div class="sale">44 000 &#8381;</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="section__col">
-            <div class="special-offer__box_big">
-              <img src="img/door44.png" alt="дверь на" class="box-big__img">
+          <div class="block__row block__row-pages">
+            <div class="main-btn catlog__main-btn">
+              <a href="#" class="main-btn__link _anim-items">Перейти в каталог</a>
+              <div class="main-btn__arrow view-btn__arrow _anim-items">
+                <span class="main-btn__circle _anim-items"></span>
+              </div>
             </div>
-            <div class="sale">44 000 &#8381;</div>
-          </div>
-        </div>
-        <div class="block__row block__row-pages">
-          <div class="main-btn catlog__main-btn">
-            <a href="#" class="main-btn__link _anim-items">Перейти в каталог</a>
-            <div class="main-btn__arrow view-btn__arrow _anim-items">
-              <span class="main-btn__circle _anim-items"></span>
+            <div class="pages">
+              <span class="pages-pagination-current"></span>
+              <span class="pages__line"></span>
+              <span class="pages-pagination-total"></span>
             </div>
-          </div>
-          <div class="pages">
-            1 <span class="pages__line"></span> 2
           </div>
         </div>
       </div>
@@ -491,7 +626,7 @@
         <div class="action__container">
           <div class="container">
             <div class="newcomer__container">
-              <div class="newcomer__close">&#10005;</div>
+              <div class="newcomer__close newcomer__close2">&#10005;</div>
               <h6 class="newcomer__title">Всем новоселам даем особо выгодные условия — двери со скидкой 7%</h6>
               <div class="newcomer-btn _anim-items">
                 <a href="#" class="main-btn__link newcomer-btn__link _anim-items">Получить скидку</a>
@@ -515,7 +650,7 @@
         <div class="action__container">
           <div class="container">
             <div class="newcomer__container">
-              <div class="newcomer__close">&#10005;</div>
+              <div class="newcomer__close newcomer__close2">&#10005;</div>
               <h6 class="newcomer__title">Свое уважение к пожилым людям мы воплотили в возможность получения ими специальной скидки в размере 10% на все модели</h6>
               <div class="newcomer-btn _anim-items">
                 <a href="#" class="main-btn__link newcomer-btn__link _anim-items">Получить скидку</a>
@@ -679,6 +814,33 @@
     </div>
   </footer>
 
+  <script>
+    var swiper = new Swiper(".block__view", {
+      slidesPerView: 1,
+      loop: true,
+      normalizeSlideIndex: true,
+      centeredSlides: false,
+      pagination: {
+        el: ".pages",
+        type: "fraction",
+        currentClass: '.pages-pagination-current',
+        totalClass: '.pages-pagination-total',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + '.pages-pagination-current' + '"></span>' +
+            ' <span class="pages__line"></span> ' +
+            '<span class="' + '.pages-pagination-total' + '"></span>';
+        },
+      },
+      scrollbar: {
+        el: ".pages__line",
+      },
+      navigation: {
+        nextEl: '.block__view-component',
+      },
+    });
+
+  </script>
+
 
   <script type="text/javascript">
   document.querySelectorAll('.bullet').forEach(function (tabsBtn) {
@@ -694,6 +856,22 @@
     document.querySelector(`[data-target="${path}"]`).classList.add('newcomer__tab_active')
   })
 });
+
+const closeSec = document.querySelector('.newcomer__close1');
+  closeSec.addEventListener('click', function () {
+    document.querySelector('.catalog-ofert__section').classList.toggle('done');
+  });
+
+
+const closeSec2 = document.querySelectorAll('.newcomer__close2');
+if (closeSec2.length > 0) {
+  for (let index = 0; index < closeSec2.length; index++) {
+    const closeSec1 = closeSec2[index];
+    closeSec1.addEventListener('click', function () {
+      document.querySelector('.newcomer__section').classList.toggle('done');
+    });
+  }
+}
   </script>
 </body>
 

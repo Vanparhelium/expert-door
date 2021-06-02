@@ -49,13 +49,7 @@ if (animItems.length > 0) {
     document.querySelector('.submenu').classList.toggle('submenu__block');
   });
 
-const closeSec = document.querySelectorAll('.newcomer__close')
-if (closeSec.length > 0) {
-  window.addEventListener('click', function () {
-    document.querySelector('.catalog-ofert__section').classList.toggle('done');
-    document.querySelector('.newcomer__section').classList.toggle('done');
-  });
-}
+
 
 
 
@@ -85,6 +79,43 @@ function outsideClick(e) {
   modal.style.display = 'none';
   }
 }
+
+const modalStep1Btns = document.querySelectorAll('.step__content-btn');
+if (modalStep1Btns.length > 0) {
+  for (let index = 0; index < modalStep1Btns.length; index++) {
+    const modalStep1Btn = modalStep1Btns[index];
+    modalStep1Btn.addEventListener('click', function () {
+      document.querySelectorAll('.step__content-btn').forEach(function(activeBtn) {
+        activeBtn.classList.remove('step__content-btn_active');
+      });
+      modalStep1Btn.classList.add('step__content-btn_active');
+      document.querySelector('.popup-help__step1').classList.remove('popup-help__step_active');
+      document.querySelector('.popup-help__step2').classList.add('popup-help__step_active');
+    });
+  };
+};
+
+const modalStep2Btns = document.querySelectorAll('.budget-item');
+if (modalStep1Btns.length > 0) {
+  for (let index = 0; index < modalStep2Btns.length; index++) {
+    const modalStep2Btn = modalStep2Btns[index];
+    modalStep2Btn.addEventListener('click', function () {
+      document.querySelector('.popup-help__step2').classList.remove('popup-help__step_active');
+      document.querySelector('.popup-help__step3').classList.add('popup-help__step_active');
+    });
+  };
+};
+
+document.querySelector('.callback__btn-popup').addEventListener('click', function () {
+    document.querySelector('.popup-help__step3').classList.remove('popup-help__step_active');
+    document.querySelector('.popup-help__step4').classList.add('popup-help__step_active');
+    setTimeout(() => {
+      closeModal();
+      document.querySelector('.popup-help__step4').classList.remove('popup-help__step_active');
+      document.querySelector('.popup-help__step1').classList.add('popup-help__step_active');
+    }, 5000);
+})
+
 
 
 
