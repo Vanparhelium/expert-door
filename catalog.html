@@ -8,6 +8,8 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Каталог</title>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script defer src="js/inputmask.min.js"></script>
+  <script defer src="js/just-validate.min.js"></script>
   <script defer src="js/main.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -71,55 +73,56 @@
         <div class="popup__help" id="popup-help">
           <div class="popup-help__content">
             <div class="popup-help__close">&#10005;</div>
-            <div class="popup-help__step popup-help__step1">
-              <div class="popup-help-step__content">
-                <div class="step__content-title">Вам необходимы двери:</div>
-                <div class="step__content-row">
-                  <input type="button" value="В квартиру" class="step__content-btn step__content-btn_active">
-                  <input type="button" value="В дом" class="step__content-btn">
-                </div>
-              </div>
-              <div class="popup-help__line">
-                <div class="help-line help-line__step1"></div>
-              </div>
-            </div>
-            <div class="popup-help__step popup-help__step2">
-              <div class="popup-help-step__content">
-                <div class="step__content-title">Ваш бюджет:</div>
-                <ul>
-                  <li class="budget-item">30 000 ₽ — 50 000 ₽</li>
-                  <li class="budget-item">50 000 ₽ — 70 000 ₽</li>
-                  <li class="budget-item">70 000 ₽ — 90 000 ₽</li>
-                  <li class="budget-item">90 000 ₽ — больше</li>
-                </ul>
-              </div>
-              <div class="popup-help__line">
-                <div class="help-line help-line__step2"></div>
-              </div>
-            </div>
-            <div class="popup-help__step popup-help__step3">
-              <div class="popup-help-step__content">
-                <div class="step__content-title step3__content-title">Наш менеджер перезвонит вам в течение короткого времени, подберет лучший вариант и ответит на любые вопросы </div>
-                <div class="step__content-row step3__content-row">
-                  <div class="step__content-phone">
-                    <div class="callback__tel callback__tel-popup">Телефон
-                      <input type="tel" name="phone" id="#">
-                      <span class="callback__tel-line"></span>
-                    </div>
-                    <p class="personal-data popup__personal-data">
-                      Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
-                      <a href="#">персональных данных</a>
-                    </p>
-                  </div>
-                  <div class="callback__col">
-                    <button class="callback__btn callback__btn-popup">Отправить</button>
+            <form action="" class="help-form">
+              <div class="popup-help__step popup-help__step1">
+                <div class="popup-help-step__content">
+                  <div class="step__content-title">Вам необходимы двери:</div>
+                  <div class="step__content-row">
+                    <input type="button" value="В квартиру" class="step__content-btn step__content-btn_active">
+                    <input type="button" value="В дом" class="step__content-btn">
                   </div>
                 </div>
+                <div class="popup-help__line">
+                  <div class="help-line help-line__step1"></div>
+                </div>
               </div>
-              <div class="popup-help__line">
-                <div class="help-line help-line__step3"></div>
+              <div class="popup-help__step popup-help__step2">
+                <div class="popup-help-step__content">
+                  <div class="step__content-title">Ваш бюджет:</div>
+                  <ul>
+                    <li class="budget-item">30 000 ₽ — 50 000 ₽</li>
+                    <li class="budget-item">50 000 ₽ — 70 000 ₽</li>
+                    <li class="budget-item">70 000 ₽ — 90 000 ₽</li>
+                    <li class="budget-item">90 000 ₽ — больше</li>
+                  </ul>
+                </div>
+                <div class="popup-help__line">
+                  <div class="help-line help-line__step2"></div>
+                </div>
               </div>
-            </div>
+              <div class="popup-help__step popup-help__step3">
+                <div class="popup-help-step__content">
+                  <div class="step__content-title step3__content-title">Наш менеджер перезвонит вам в течение короткого времени, подберет лучший вариант и ответит на любые вопросы </div>
+                  <div class="step__content-row step3__content-row">
+                      <div class="step__content-phone">
+                        <div class="callback__tel callback__tel-popup">
+                          <input type="tel" name="phone" placeholder="Телефон" id="#" class="input-tel" data-validate-field="formTel" data-validate-rules="form-phone">
+                          <span class="callback__tel-line"></span>
+                        </div>
+                        <p class="personal-data popup__personal-data">
+                          Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
+                          <a href="#">персональных данных</a>
+                        </p>
+                      </div>
+                      <div class="callback__col">
+                        <button type="submit" class="callback__btn callback__btn-popup">Отправить</button>
+                      </div>
+                  </div>
+                </div>
+                <div class="popup-help__line">
+                  <div class="help-line help-line__step3"></div>
+                </div>
+              </div>
             <div class="popup-help__step popup-help__step4">
               <div class="popup-help-step__content">
                 <h6 class="step__content-title step4__content-title">Спасибо за обращение!</h6>
@@ -132,6 +135,7 @@
                 <div class="help-line help-line__step4"></div>
               </div>
             </div>
+          </form>
           </div>
         </div>
       </div>
@@ -873,6 +877,8 @@ if (closeSec2.length > 0) {
   }
 }
   </script>
+
+
 </body>
 
 </html>

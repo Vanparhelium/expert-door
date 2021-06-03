@@ -288,6 +288,7 @@ body {
   background-color: inherit;
   color: #FEFEFE;
   z-index: 2;
+  cursor: pointer;
 }
 
 .help__menu {
@@ -1032,12 +1033,35 @@ body {
   padding-bottom: 5px;
 }
 
+.input-tel {
+  width: 100%;
+  outline: none;
+  border: none !important;
+  color: #222222 !important;
+  transition: color .3s ease-in-out;
+}
+
+.input-tel:hover::placeholder {
+  color: #010101;
+}
+.input-tel::placeholder {
+  color: #010101;
+}
+
+.js-validate-error-label {
+  display: none;
+}
+
 .callback__tel-line {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   border-bottom: 1px solid #010101;
+}
+
+.callback__tel-line_red {
+  border-bottom: 1px solid #D62D30;
 }
 
 .callback__tel input {
