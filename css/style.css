@@ -1067,7 +1067,7 @@ body {
 .callback__tel input {
   border: none;
   background: inherit;
-  width: 120px;
+  width:100%;
 }
 
 .personal-data {

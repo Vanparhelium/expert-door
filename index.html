@@ -121,40 +121,42 @@
               </div>
               <div class="popup-help__step popup-help__step3">
                 <div class="popup-help-step__content">
-                  <div class="step__content-title step3__content-title">Наш менеджер перезвонит вам в течение короткого времени, подберет лучший вариант и ответит на любые вопросы </div>
+                  <div class="step__content-title step3__content-title">Наш менеджер перезвонит вам в течение короткого
+                    времени, подберет лучший вариант и ответит на любые вопросы </div>
                   <div class="step__content-row step3__content-row">
-                      <div class="step__content-phone">
-                        <div class="callback__tel callback__tel-popup">
-                          <input type="tel" name="phone" placeholder="Телефон" id="#" class="input-tel" data-validate-field="formTel" data-validate-rules="form-phone">
-                          <span class="callback__tel-line"></span>
-                        </div>
-                        <p class="personal-data popup__personal-data">
-                          Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
-                          <a href="#">персональных данных</a>
-                        </p>
+                    <div class="step__content-phone">
+                      <div class="callback__tel callback__tel-popup">
+                        <input type="tel" name="phone" placeholder="Телефон" id="#" class="input-tel"
+                          data-validate-field="formTel" data-validate-rules="form-phone">
+                        <span class="callback__tel-line"></span>
                       </div>
-                      <div class="callback__col">
-                        <button type="submit" class="callback__btn callback__btn-popup">Отправить</button>
-                      </div>
+                      <p class="personal-data popup__personal-data">
+                        Нажимая на кнопку отпраить вы соглашаетесь с условиями обработки
+                        <a href="#">персональных данных</a>
+                      </p>
+                    </div>
+                    <div class="callback__col">
+                      <button type="submit" class="callback__btn callback__btn-popup">Отправить</button>
+                    </div>
                   </div>
                 </div>
                 <div class="popup-help__line">
                   <div class="help-line help-line__step3"></div>
                 </div>
               </div>
-            <div class="popup-help__step popup-help__step4">
-              <div class="popup-help-step__content">
-                <h6 class="step__content-title step4__content-title">Спасибо за обращение!</h6>
-                <div class="step__content-text">
-                  Мы получили вашу заявку и перезвоним в близжайшее время
+              <div class="popup-help__step popup-help__step4">
+                <div class="popup-help-step__content">
+                  <h6 class="step__content-title step4__content-title">Спасибо за обращение!</h6>
+                  <div class="step__content-text">
+                    Мы получили вашу заявку и перезвоним в близжайшее время
+                  </div>
+                  <div class="popup__ok"></div>
                 </div>
-                <div class="popup__ok"></div>
+                <div class="popup-help__line">
+                  <div class="help-line help-line__step4"></div>
+                </div>
               </div>
-              <div class="popup-help__line">
-                <div class="help-line help-line__step4"></div>
-              </div>
-            </div>
-          </form>
+            </form>
           </div>
         </div>
       </div>
@@ -622,7 +624,7 @@
             </div>
             <p class="benefits__text block__text-400">Дополнительная защита примыкания — дополнительная опция
               безопасности входной двери.</p>
-              <!-- <p class="block__text block__text-more ">Подробнее
+            <!-- <p class="block__text block__text-more ">Подробнее
                 <span class="accordion__arrow accordion__arrow-more"></span>
               </p> -->
             <p class="block__text benefits__text-500">Со стороны притвора двери наваривается «квадрат», который не
@@ -635,7 +637,8 @@
               <br>
               <br>
               Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой
-              входной двери, заказанной у нас — по Вашему желанию.</p>
+              входной двери, заказанной у нас — по Вашему желанию.
+            </p>
           </div>
         </div>
       </section>
@@ -793,7 +796,9 @@
               <div class="section__col-main reviews__col">
                 <div class="reviews__row block__row-reviews">
                   <h3 class="benefits__title">Алексей</h3>
-                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не ожидал.</p>
+                  <p class="block__text block__text-385 block__text-reviews">Честное слово, роскошная дверь Expert
+                    "Профессор NEW". Брал в Тамбове. Уложиться в 25000 (со скидками) и заиметь такую красоту, просто не
+                    ожидал.</p>
                 </div>
               </div>
             </div>
@@ -817,7 +822,8 @@
                 <p class="block__text callback__text">Поможем выбрать дверь и ответим на любые вопросы</p>
 
                 <div class="callback__tel">
-                  <input type="tel" placeholder="Телефон" name="phone" class="input-tel" data-validate-field="formTel" data-validate-rules="form-phone">
+                  <input type="tel" placeholder="Телефон" name="phone" class="input-tel input-tel__main" data-validate-field="tel"
+                    data-validate-rules="form-phone" id="mainTel">
                   <span class="callback__tel-line _anim-items"></span>
                 </div>
                 <p class="personal-data">
@@ -826,7 +832,7 @@
                 </p>
               </div>
               <div class="callback__col">
-                <button class="callback__btn">Отправить</button>
+                <button class="callback__btn callback__btn-main">Отправить</button>
               </div>
             </div>
           </form>
@@ -1061,6 +1067,9 @@
       document.querySelector('.block__more').classList.toggle('block__more_active');
       document.querySelector('.accordion__arrow-more').classList.toggle('accordion__arrow-more_active');
     });
+
+
+
   </script>
 
 

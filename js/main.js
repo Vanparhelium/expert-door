@@ -171,6 +171,46 @@ new JustValidate('.help-form', {
   }
 });
 
+// validate form
+if (document.querySelector('#mainTel')) {
+
+  var select = document.querySelector('#mainTel');
+
+  var impm = new Inputmask("8 (999) 999 99 99");
+
+  impm.mask(select);
+
+  new JustValidate('.callback-form', {
+    rules: {
+      tel: {
+        required: true,
+        function: (name, value) => {
+          const phones = select.inputmask.unmaskedvalue()
+          return Number(phones) && phones.length === 10
+        }
+      },
+    },
+    tooltip: {
+      fadeOutClass: '.hide',
+    }
+  });
+
+  document.querySelector('.callback__btn-main').addEventListener('click', function () {
+    const inputMtel = document.querySelector('.input-tel__main');
+      const phones = select.inputmask.unmaskedvalue();
+      if (phones.length < 10) {
+        document.querySelectorAll('.callback__tel-line').forEach(function (inputLine) {
+          inputLine.classList.add('callback__tel-line_red');
+        });
+      };
+      if (phones.length === 10) {
+        document.querySelectorAll('.callback__tel-line').forEach(function (inputLine) {
+          inputLine.classList.remove('callback__tel-line_red');
+        });
+      };
+  });
+}
+
 const btnsTel = document.querySelectorAll('.callback__btn');
 if (btnsTel.length > 0) {
   for (let i = 0; i < btnsTel.length; i++) {
